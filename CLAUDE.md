@@ -46,5 +46,3 @@ HTML pages use `cosmo` theme; slides use `revealjs`. All `.qmd` load `custom.css
 - Slide section headers: `# Secção {background-color="#2C3E50"}`.
 - New page → add nav entry in `_quarto.yml` and create the `.qmd`.
 - New exercise file → drop in `ficheiros/` (tracked in git).
-
-See `AGENTS.md` for the original spec; keep both files in sync if rules change.

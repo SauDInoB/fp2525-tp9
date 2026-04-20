@@ -283,7 +283,7 @@ HTNCare: ensaio fictício sobre controlo da hipertensão.
 
 ::: {.column width="45%"}
 ```r
-# read_csv — lê um ficheiro CSV
+# read_csv: lê um ficheiro CSV
 dados <- read_csv(
   here("data", "raw", "htncare.csv")
 )
@@ -310,7 +310,7 @@ Tibble com 30 linhas e 11 colunas (mostradas 6 variáveis acima).
 
 ::: {.column width="40%"}
 ```r
-# glimpse — estrutura e tipos
+# glimpse: estrutura e tipos
 glimpse(dados)
 ```
 
@@ -332,7 +332,7 @@ glimpse(dados)
 
 ::: {.column width="40%"}
 ```r
-# summary — estatísticas rápidas
+# summary: estatísticas rápidas
 dados |>
   select(idade, imc,
          sbp_baseline,
@@ -366,7 +366,7 @@ dados |>
 
 ::: {.column width="50%"}
 ```r
-# tibble — cria uma tabela
+# tibble: cria uma tabela
 dados_sujos <- tibble(
   "ID Paciente"  = 1:5,
   "Grupo (A/B)"  = c("A","B","A","B","A"),
@@ -398,7 +398,7 @@ names(dados_sujos)
 
 ::: {.column width="50%"}
 ```r
-# clean_names — snake_case, sem acentos
+# clean_names: snake_case, sem acentos
 dados_limpos <- dados_sujos |>
   clean_names()
 
@@ -425,7 +425,7 @@ dados_sujos |>
 
 ::: {.column width="40%"}
 ```r
-# filter — escolhe linhas por condição
+# filter: escolhe linhas por condição
 dados |>
   filter(grupo == "intervencao")
 ```
@@ -451,7 +451,7 @@ dados |>
 
 ::: {.column width="45%"}
 ```r
-# select — escolhe colunas pelo nome
+# select: escolhe colunas pelo nome
 dados |>
   select(patient_id,
          sbp_baseline,
@@ -478,7 +478,7 @@ dados |>
 
 ::: {.column width="45%"}
 ```r
-# mutate — cria ou transforma colunas
+# mutate: cria ou transforma colunas
 dados <- dados |>
   mutate(
     reducao_sbp =
@@ -507,7 +507,7 @@ dados |>
 
 ::: {.column width="45%"}
 ```r
-# count — conta combinações
+# count: conta combinações
 dados |>
   count(grupo, sexo)
 ```
@@ -548,7 +548,7 @@ Variáveis categóricas: n (%).
 
 ::: {.column width="45%"}
 ```r
-# tbl_summary — Tabela 1 por grupo
+# tbl_summary: Tabela 1 por grupo
 dados |>
   select(grupo, idade, sexo,
          imc, sbp_baseline) |>
@@ -580,7 +580,7 @@ dados |>
 
 ::: {.column width="45%"}
 ```r
-# add_overall — coluna "Total"
+# add_overall: coluna "Total"
 tabela <- dados |>
   select(grupo, idade, sexo,
          imc, sbp_baseline) |>
@@ -611,7 +611,7 @@ dados |>
 
 ::: {.column width="45%"}
 ```r
-# add_p — adiciona p-values por variável
+# add_p: adiciona p-values por variável
 dados |>
   select(grupo, idade, sexo,
          imc, sbp_baseline) |>
@@ -647,7 +647,7 @@ Num RCT bem aleatorizado, diferenças de baseline são fruto do acaso.
 
 ::: {.column width="45%"}
 ```r
-# label — renomeia cada variável
+# label: renomeia cada variável
 dados |>
   select(grupo, idade, sexo,
          imc, sbp_baseline) |>
@@ -688,8 +688,8 @@ dados |>
 
 ::: {.column width="45%"}
 ```r
-# statistic — define sumário
-# digits — casas decimais
+# statistic: define sumário
+# digits: casas decimais
 dados |>
   select(grupo, idade, sexo,
          imc, sbp_baseline) |>
@@ -749,7 +749,7 @@ Um gráfico é construído por camadas.
 
 ::: {.column width="50%"}
 ```r
-# geom_boxplot — caixa de bigodes
+# geom_boxplot: caixa de bigodes
 ggplot(dados,
        aes(x = grupo,
            y = sbp_semana12)) +
@@ -778,7 +778,7 @@ ggplot(dados, aes(x = grupo, y = sbp_semana12)) +
 
 ::: {.column width="50%"}
 ```r
-# geom_jitter — pontos com jitter horizontal
+# geom_jitter: pontos com jitter horizontal
 ggplot(dados,
        aes(x = grupo,
            y = sbp_semana12)) +
@@ -816,7 +816,7 @@ ggplot(dados, aes(x = grupo, y = sbp_semana12)) +
 
 ::: {.column width="50%"}
 ```r
-# aes(colour = grupo) — mapeia cor
+# aes(colour = grupo): mapeia cor
 ggplot(dados,
        aes(x = grupo,
            y = sbp_semana12,
@@ -853,7 +853,7 @@ ggplot(dados, aes(x = grupo, y = sbp_semana12, colour = grupo)) +
 
 ::: {.column width="50%"}
 ```r
-# scale_colour_manual — paleta fixa
+# scale_colour_manual: paleta fixa
 ggplot(dados,
        aes(x = grupo,
            y = sbp_semana12,
@@ -897,8 +897,8 @@ ggplot(dados, aes(x = grupo, y = sbp_semana12, colour = grupo)) +
 
 ::: {.column width="50%"}
 ```r
-# labs — títulos e eixos
-# theme_minimal — tema limpo
+# labs: títulos e eixos
+# theme_minimal: tema limpo
 ggplot(dados,
        aes(x = grupo,
            y = sbp_semana12,
@@ -1000,7 +1000,7 @@ ensaio-site/
 
 ::: {.column width="50%"}
 ```yaml
-# _quarto.yml — configuração do site
+# _quarto.yml: configuração do site
 project:
   type: website
   output-dir: docs                     # <1>
@@ -1024,7 +1024,7 @@ website:
 
 ::: {.column width="50%"}
 ```yaml
-# navbar — barra de navegação
+# navbar: barra de navegação
 website:
   navbar:
     left:
@@ -1104,7 +1104,7 @@ dados <- read_csv(
 ```{{r}}
 #| echo: false
 
-# tbl_summary — Tabela 1
+# tbl_summary: Tabela 1
 dados |>
   select(grupo, idade, sexo,
          sbp_baseline) |>
@@ -1139,7 +1139,7 @@ dados |>
 #| fig-width: 6
 #| fig-height: 4
 
-# ggplot — gráfico do outcome
+# ggplot: gráfico do outcome
 ggplot(
   dados |> filter(!is.na(sbp_semana12)),
   aes(x = grupo, y = sbp_semana12)
@@ -1173,7 +1173,7 @@ ggplot(dados |> filter(!is.na(sbp_semana12)),
 
 ::: {.column width="45%"}
 ```bash
-# quarto preview — recarrega ao gravar
+# quarto preview: recarrega ao gravar
 quarto preview
 ```
 
@@ -1192,7 +1192,7 @@ Abre o browser e actualiza a cada save.
 
 ::: {.column width="45%"}
 ```bash
-# quarto render — build estático
+# quarto render: build estático
 quarto render
 ```
 
