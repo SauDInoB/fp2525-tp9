@@ -18,7 +18,7 @@
     "href": "exercicio.html#o-que-entregar",
     "title": "Exercício · Análise dos dados e site Quarto do ensaio",
     "section": "O que entregar",
-    "text": "O que entregar\nDuas entregas: uma formativa a meio, e a apresentação final na TP11.\n\nEntrega formativa (1 de Maio)\nMínimo viável. Site com a estrutura das cinco páginas, integrando o que já foi produzido até à TP8.\n\nProjecto Quarto website publicado com as páginas:\n\nindex.qmd: Início\nprotocolo.qmd: Protocolo\nmateriais.qmd: Materiais\nresultados.qmd: Resultados\nequipa.qmd: Equipa\n\nConteúdo da apresentação da TP8 integrado no site (pode estar numa só página ou distribuído; serve de ponto de partida).\nRepositório Git com histórico de commits coerente.\nURL do site publicado acessível a partir do Moodle.\n\n\n\nApresentação final (13 de Maio, TP11)\nO site é a apresentação. Deve conter todo o trabalho da disciplina, personalizado à medida do grupo (podem e devem alterar tema, acrescentar páginas extra, figuras, etc.).\nCompilação final mínima:\n\nInício: resumo do ensaio (cenário, objectivos, grupo)\nProtocolo: protocolo completo do ensaio (versão revista da E1)\nMateriais: CRF, formulário REDCap, protótipos da E2\nResultados: resultados preliminares do piloto (tabela de características basais + gráfico do outcome primário)\nEquipa: membros, papéis, contactos\nDeclaração de uso de IA: obrigatória, independentemente de IA ter sido ou não utilizada. Declarar que ferramentas foram usadas e em que secções, ou declarar ausência de utilização.\n\nPara além destes elementos, tudo o que considerem relevante mostrar do trabalho feito durante a disciplina."
+    "text": "O que entregar\nDuas entregas: uma formativa a meio, e a apresentação final na TP11.\n\nEntrega formativa (fim da próxima semana)\nMínimo viável. Site com a estrutura das cinco páginas, integrando o que já foi produzido até à TP8.\n\nProjecto Quarto website publicado com as páginas:\n\nindex.qmd: Início\nprotocolo.qmd: Protocolo\nmateriais.qmd: Materiais\nresultados.qmd: Resultados\nequipa.qmd: Equipa\n\nConteúdo da apresentação da TP8 integrado no site (pode estar numa só página ou distribuído; serve de ponto de partida).\nRepositório Git com histórico de commits coerente.\nURL do site publicado acessível a partir do Moodle.\n\n\n\nApresentação final (dia da TP11, daqui a três semanas)\nO site é a apresentação. Deve conter todo o trabalho da disciplina, personalizado à medida do grupo (podem e devem alterar tema, acrescentar páginas extra, figuras, etc.).\nCompilação final mínima:\n\nInício: resumo do ensaio (cenário, objectivos, grupo)\nProtocolo: protocolo completo do ensaio (versão revista da E1)\nMateriais: CRF, formulário REDCap, protótipos da E2\nResultados: resultados preliminares do piloto (tabela de características basais + gráfico do outcome primário)\nEquipa: membros, papéis, contactos\nDeclaração de uso de IA: obrigatória, independentemente de IA ter sido ou não utilizada. Declarar que ferramentas foram usadas e em que secções, ou declarar ausência de utilização.\n\nPara além destes elementos, tudo o que considerem relevante mostrar do trabalho feito durante a disciplina."
   },
   {
     "objectID": "exercicio.html#datasets",
@@ -46,7 +46,7 @@
     "href": "exercicio.html#prazos",
     "title": "Exercício · Análise dos dados e site Quarto do ensaio",
     "section": "Prazos",
-    "text": "Prazos\n\n1 de Maio de 2026: entrega formativa (site com estrutura + TP8)\n13 de Maio de 2026 (TP11): apresentação final (site completo)"
+    "text": "Prazos\n\nEsta semana: começar o trabalho\nPróxima semana (TP10, sem aula presencial): desenvolver e submeter a entrega formativa no Moodle até ao fim da semana\nSemana seguinte: receber feedback da formativa\nSemana a seguir (TP11): apresentação final no dia da aula"
   },
   {
     "objectID": "exercicio.html#critérios-de-avaliação",
@@ -74,7 +74,7 @@
     "href": "index.html#onde-estamos-no-arco-do-ensaio",
     "title": "R/RStudio e Publicação Web com Quarto",
     "section": "Onde estamos no arco do ensaio",
-    "text": "Onde estamos no arco do ensaio\n\n\n\nFase\nEstado\n\n\n\n\nTP1 a TP8\nConcluído\n\n\nE2 (materiais)\nEntregue\n\n\nTP9 (hoje)\nAnálise em R + site Quarto\n\n\nTP10 (28 Abril)\nTrabalho autónomo\n\n\nTP11 + E3 (13 Maio)\nApresentações e entrega final"
+    "text": "Onde estamos no arco do ensaio\n\n\n\nFase\nEstado\n\n\n\n\nTP1 a TP8\nConcluído\n\n\nE2 (materiais)\nEntregue\n\n\nTP9 (hoje)\nAnálise em R + site Quarto\n\n\nTP10 (próxima semana)\nTrabalho autónomo\n\n\nTP11 (daqui a 3 semanas)\nApresentação final (o site)"
   },
   {
     "objectID": "index.html#objectivos-desta-aula",
@@ -546,11 +546,11 @@
     "text": "Alternativa: Posit Connect Cloud\nPosit Connect Cloud publica aplicações Shiny, documentos Quarto, e APIs.\n\nDeploy via drag-and-drop ou GitHub\nPlano gratuito disponível\nÚtil para sites dinâmicos\n\nPara este projecto, GitHub Pages é mais simples."
   },
   {
-    "objectID": "index.html#de-abril-sem-aula-presencial",
-    "href": "index.html#de-abril-sem-aula-presencial",
+    "objectID": "index.html#tp10-sem-aula-presencial",
+    "href": "index.html#tp10-sem-aula-presencial",
     "title": "R/RStudio e Publicação Web com Quarto",
-    "section": "28 de Abril: sem aula presencial",
-    "text": "28 de Abril: sem aula presencial\nTrabalham autonomamente no site do ensaio."
+    "section": "TP10: sem aula presencial",
+    "text": "TP10: sem aula presencial\nPróxima semana. Trabalham autonomamente no site do ensaio."
   },
   {
     "objectID": "index.html#checklist-da-tp10",
@@ -599,7 +599,7 @@
     "href": "index.html#próximos-passos",
     "title": "R/RStudio e Publicação Web com Quarto",
     "section": "Próximos passos",
-    "text": "Próximos passos\n\nEsta semana: rever o guião e começar o exercício\n28 Abril (TP10): trabalho autónomo\n1 Maio: entrega formativa no Moodle (estrutura do site + TP8)\n13 Maio (TP11): apresentação final (site completo com declaração de IA)"
+    "text": "Próximos passos\n\nEsta semana: rever o guião e começar o exercício\nPróxima semana (TP10): trabalho autónomo, entregar formativa no Moodle até ao fim da semana (estrutura do site + TP8)\nSemana seguinte: feedback à entrega formativa\nSemana a seguir (TP11): apresentação final (site completo com declaração de IA) no dia da aula"
   },
   {
     "objectID": "index.html#contacto",
