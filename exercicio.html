@@ -156,7 +156,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#contexto" id="toc-contexto" class="nav-link active" data-scroll-target="#contexto">Contexto</a></li>
-  <li><a href="#o-que-entregar" id="toc-o-que-entregar" class="nav-link" data-scroll-target="#o-que-entregar">O que entregar</a></li>
+  <li><a href="#o-que-entregar" id="toc-o-que-entregar" class="nav-link" data-scroll-target="#o-que-entregar">O que entregar</a>
+  <ul class="collapse">
+  <li><a href="#entrega-formativa-1-de-maio" id="toc-entrega-formativa-1-de-maio" class="nav-link" data-scroll-target="#entrega-formativa-1-de-maio">Entrega formativa (1 de Maio)</a></li>
+  <li><a href="#apresentação-final-13-de-maio-tp11" id="toc-apresentação-final-13-de-maio-tp11" class="nav-link" data-scroll-target="#apresentação-final-13-de-maio-tp11">Apresentação final (13 de Maio, TP11)</a></li>
+  </ul></li>
   <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a></li>
   <li><a href="#guia-de-trabalho" id="toc-guia-de-trabalho" class="nav-link" data-scroll-target="#guia-de-trabalho">Guia de trabalho</a>
   <ul class="collapse">
@@ -165,9 +169,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#publicação" id="toc-publicação" class="nav-link" data-scroll-target="#publicação">Publicação</a></li>
   </ul></li>
   <li><a href="#como-submeter" id="toc-como-submeter" class="nav-link" data-scroll-target="#como-submeter">Como submeter</a></li>
-  <li><a href="#prazo" id="toc-prazo" class="nav-link" data-scroll-target="#prazo">Prazo</a></li>
+  <li><a href="#prazos" id="toc-prazos" class="nav-link" data-scroll-target="#prazos">Prazos</a></li>
   <li><a href="#critérios-de-avaliação" id="toc-critérios-de-avaliação" class="nav-link" data-scroll-target="#critérios-de-avaliação">Critérios de avaliação</a></li>
   <li><a href="#leitura-recomendada" id="toc-leitura-recomendada" class="nav-link" data-scroll-target="#leitura-recomendada">Leitura recomendada</a></li>
+  <li><a href="#documentação-quarto" id="toc-documentação-quarto" class="nav-link" data-scroll-target="#documentação-quarto">Documentação Quarto</a></li>
   </ul>
 </nav>
     </div>
@@ -201,21 +206,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="o-que-entregar" class="level2">
 <h2 class="anchored" data-anchor-id="o-que-entregar">O que entregar</h2>
+<p>Duas entregas: uma formativa a meio, e a apresentação final na TP11.</p>
+<section id="entrega-formativa-1-de-maio" class="level3">
+<h3 class="anchored" data-anchor-id="entrega-formativa-1-de-maio">Entrega formativa (1 de Maio)</h3>
+<p>Mínimo viável. Site com a estrutura das cinco páginas, integrando o que já foi produzido até à TP8.</p>
 <ol type="1">
-<li><p><strong>Script de análise:</strong> ficheiro <code>analise.R</code> ou documento <code>analise.qmd</code> com a análise reprodutível do dataset do vosso cenário. O código deve correr do início ao fim sem erros numa máquina limpa.</p></li>
-<li><p><strong>Tabela de características basais:</strong> construída com <code>gtsummary</code>, integrada na página de resultados do site.</p></li>
-<li><p><strong>Gráfico do outcome primário:</strong> construído com <code>ggplot2</code>, integrado na página de resultados do site.</p></li>
-<li><p><strong>Projecto Quarto website publicado</strong>, com as seguintes páginas:</p>
+<li><strong>Projecto Quarto website publicado</strong> com as páginas:
 <ul>
-<li><strong>Início</strong> (<code>index.qmd</code>): resumo do ensaio, cenário, grupo, links principais</li>
-<li><strong>Protocolo</strong> (<code>protocolo.qmd</code>): SPIRIT table e descrição do protocolo (da E1)</li>
-<li><strong>Materiais</strong> (<code>materiais.qmd</code>): CRF, link para o formulário REDCap, protótipo da E2</li>
-<li><strong>Resultados</strong> (<code>resultados.qmd</code>): tabela de características basais + gráfico do outcome primário</li>
-<li><strong>Equipa</strong> (<code>equipa.qmd</code>): membros do grupo, papéis, contactos</li>
+<li><code>index.qmd</code>: Início</li>
+<li><code>protocolo.qmd</code>: Protocolo</li>
+<li><code>materiais.qmd</code>: Materiais</li>
+<li><code>resultados.qmd</code>: Resultados</li>
+<li><code>equipa.qmd</code>: Equipa</li>
 </ul></li>
-<li><p><strong>Repositório Git</strong> com todo o histórico de commits e o URL do site publicado.</p></li>
+<li><strong>Conteúdo da apresentação da TP8</strong> integrado no site (pode estar numa só página ou distribuído; serve de ponto de partida).</li>
+<li><strong>Repositório Git</strong> com histórico de commits coerente.</li>
+<li><strong>URL do site publicado</strong> acessível a partir do Moodle.</li>
 </ol>
+</section>
+<section id="apresentação-final-13-de-maio-tp11" class="level3">
+<h3 class="anchored" data-anchor-id="apresentação-final-13-de-maio-tp11">Apresentação final (13 de Maio, TP11)</h3>
+<p>O site é a apresentação. Deve conter todo o trabalho da disciplina, personalizado à medida do grupo (podem e devem alterar tema, acrescentar páginas extra, figuras, etc.).</p>
+<p>Compilação final mínima:</p>
+<ul>
+<li><strong>Início</strong>: resumo do ensaio (cenário, objectivos, grupo)</li>
+<li><strong>Protocolo</strong>: protocolo completo do ensaio (versão revista da E1)</li>
+<li><strong>Materiais</strong>: CRF, formulário REDCap, protótipos da E2</li>
+<li><strong>Resultados</strong>: resultados preliminares do piloto (tabela de características basais + gráfico do outcome primário)</li>
+<li><strong>Equipa</strong>: membros, papéis, contactos</li>
+<li><strong>Declaração de uso de IA</strong>: obrigatória, independentemente de IA ter sido ou não utilizada. Declarar que ferramentas foram usadas e em que secções, ou declarar ausência de utilização.</li>
+</ul>
+<p>Para além destes elementos, tudo o que considerem relevante mostrar do trabalho feito durante a disciplina.</p>
 <hr>
+</section>
 </section>
 <section id="datasets" class="level2">
 <h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
@@ -309,9 +332,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ambos os links devem estar funcionais no momento da submissão.</p>
 <hr>
 </section>
-<section id="prazo" class="level2">
-<h2 class="anchored" data-anchor-id="prazo">Prazo</h2>
-<p><strong>1 de Maio de 2026.</strong></p>
+<section id="prazos" class="level2">
+<h2 class="anchored" data-anchor-id="prazos">Prazos</h2>
+<ul>
+<li><strong>1 de Maio de 2026</strong>: entrega formativa (site com estrutura + TP8)</li>
+<li><strong>13 de Maio de 2026 (TP11)</strong>: apresentação final (site completo)</li>
+</ul>
 <hr>
 </section>
 <section id="critérios-de-avaliação" class="level2">
@@ -360,6 +386,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="leitura-recomendada">Leitura recomendada</h2>
 <p><a href="https://tiagojct.eu/notes/rst-bp/">RStudio: Best Practices for Scientific Work</a></p>
 <p>Cobre projectos RStudio, estrutura de pastas, <code>here::here()</code>, estilo de código, e boas práticas de reprodutibilidade. Leitura obrigatória antes de começar o trabalho.</p>
+</section>
+<section id="documentação-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="documentação-quarto">Documentação Quarto</h2>
+<p>Toda a documentação oficial está em <a href="https://quarto.org/">quarto.org</a>: tutoriais, referência completa de YAML e opções de chunks, exemplos para cada formato. As <a href="https://github.com/quarto-dev/quarto-cli/discussions">discussões no GitHub</a> têm suporte activo da comunidade e da equipa da Posit. Consultar primeiro antes de perguntar.</p>
 
 
 </section>

@@ -18,7 +18,7 @@
     "href": "exercicio.html#o-que-entregar",
     "title": "Exercício · Análise dos dados e site Quarto do ensaio",
     "section": "O que entregar",
-    "text": "O que entregar\n\nScript de análise: ficheiro analise.R ou documento analise.qmd com a análise reprodutível do dataset do vosso cenário. O código deve correr do início ao fim sem erros numa máquina limpa.\nTabela de características basais: construída com gtsummary, integrada na página de resultados do site.\nGráfico do outcome primário: construído com ggplot2, integrado na página de resultados do site.\nProjecto Quarto website publicado, com as seguintes páginas:\n\nInício (index.qmd): resumo do ensaio, cenário, grupo, links principais\nProtocolo (protocolo.qmd): SPIRIT table e descrição do protocolo (da E1)\nMateriais (materiais.qmd): CRF, link para o formulário REDCap, protótipo da E2\nResultados (resultados.qmd): tabela de características basais + gráfico do outcome primário\nEquipa (equipa.qmd): membros do grupo, papéis, contactos\n\nRepositório Git com todo o histórico de commits e o URL do site publicado."
+    "text": "O que entregar\nDuas entregas: uma formativa a meio, e a apresentação final na TP11.\n\nEntrega formativa (1 de Maio)\nMínimo viável. Site com a estrutura das cinco páginas, integrando o que já foi produzido até à TP8.\n\nProjecto Quarto website publicado com as páginas:\n\nindex.qmd: Início\nprotocolo.qmd: Protocolo\nmateriais.qmd: Materiais\nresultados.qmd: Resultados\nequipa.qmd: Equipa\n\nConteúdo da apresentação da TP8 integrado no site (pode estar numa só página ou distribuído; serve de ponto de partida).\nRepositório Git com histórico de commits coerente.\nURL do site publicado acessível a partir do Moodle.\n\n\n\nApresentação final (13 de Maio, TP11)\nO site é a apresentação. Deve conter todo o trabalho da disciplina, personalizado à medida do grupo (podem e devem alterar tema, acrescentar páginas extra, figuras, etc.).\nCompilação final mínima:\n\nInício: resumo do ensaio (cenário, objectivos, grupo)\nProtocolo: protocolo completo do ensaio (versão revista da E1)\nMateriais: CRF, formulário REDCap, protótipos da E2\nResultados: resultados preliminares do piloto (tabela de características basais + gráfico do outcome primário)\nEquipa: membros, papéis, contactos\nDeclaração de uso de IA: obrigatória, independentemente de IA ter sido ou não utilizada. Declarar que ferramentas foram usadas e em que secções, ou declarar ausência de utilização.\n\nPara além destes elementos, tudo o que considerem relevante mostrar do trabalho feito durante a disciplina."
   },
   {
     "objectID": "exercicio.html#datasets",
@@ -42,11 +42,11 @@
     "text": "Como submeter\nSubmeter no Moodle:\n\nLink para o repositório Git\nLink para o site publicado\n\nAmbos os links devem estar funcionais no momento da submissão."
   },
   {
-    "objectID": "exercicio.html#prazo",
-    "href": "exercicio.html#prazo",
+    "objectID": "exercicio.html#prazos",
+    "href": "exercicio.html#prazos",
     "title": "Exercício · Análise dos dados e site Quarto do ensaio",
-    "section": "Prazo",
-    "text": "Prazo\n1 de Maio de 2026."
+    "section": "Prazos",
+    "text": "Prazos\n\n1 de Maio de 2026: entrega formativa (site com estrutura + TP8)\n13 de Maio de 2026 (TP11): apresentação final (site completo)"
   },
   {
     "objectID": "exercicio.html#critérios-de-avaliação",
@@ -61,6 +61,13 @@
     "title": "Exercício · Análise dos dados e site Quarto do ensaio",
     "section": "Leitura recomendada",
     "text": "Leitura recomendada\nRStudio: Best Practices for Scientific Work\nCobre projectos RStudio, estrutura de pastas, here::here(), estilo de código, e boas práticas de reprodutibilidade. Leitura obrigatória antes de começar o trabalho."
+  },
+  {
+    "objectID": "exercicio.html#documentação-quarto",
+    "href": "exercicio.html#documentação-quarto",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "Documentação Quarto",
+    "text": "Documentação Quarto\nToda a documentação oficial está em quarto.org: tutoriais, referência completa de YAML e opções de chunks, exemplos para cada formato. As discussões no GitHub têm suporte activo da comunidade e da equipa da Posit. Consultar primeiro antes de perguntar."
   },
   {
     "objectID": "index.html#onde-estamos-no-arco-do-ensaio",
@@ -581,11 +588,18 @@
     "text": "Referência obrigatória\nRStudio: Best Practices for Scientific Work\nCobre projectos, estrutura de pastas, here::here(), estilo de código, reprodutibilidade."
   },
   {
+    "objectID": "index.html#documentação-quarto",
+    "href": "index.html#documentação-quarto",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Documentação Quarto",
+    "text": "Documentação Quarto\nquarto.org tem tudo o que precisam:\n\nTutoriais passo a passo\nReferência completa (YAML, opções de chunks, formatos de output)\nExemplos de sites, livros, revealjs, PDF\nDiscussões no GitHub: suporte activo da comunidade e da Posit\n\nConsultar sempre primeiro antes de perguntar."
+  },
+  {
     "objectID": "index.html#próximos-passos",
     "href": "index.html#próximos-passos",
     "title": "R/RStudio e Publicação Web com Quarto",
     "section": "Próximos passos",
-    "text": "Próximos passos\n\nEsta semana: rever o guião e fazer o exercício\n28 Abril (TP10): trabalho autónomo\n1 Maio: entrega do site no Moodle\n13 Maio (TP11): apresentações finais"
+    "text": "Próximos passos\n\nEsta semana: rever o guião e começar o exercício\n28 Abril (TP10): trabalho autónomo\n1 Maio: entrega formativa no Moodle (estrutura do site + TP8)\n13 Maio (TP11): apresentação final (site completo com declaração de IA)"
   },
   {
     "objectID": "index.html#contacto",
