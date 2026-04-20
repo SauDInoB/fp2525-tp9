@@ -1316,12 +1316,23 @@ Descarregar de `ficheiros/` neste site:
 
 Cobre projectos, estrutura de pastas, `here::here()`, estilo de código, reprodutibilidade.
 
+## Documentação Quarto
+
+[quarto.org](https://quarto.org/) tem tudo o que precisam:
+
+- Tutoriais passo a passo
+- Referência completa (YAML, opções de chunks, formatos de output)
+- Exemplos de sites, livros, revealjs, PDF
+- [Discussões no GitHub](https://github.com/quarto-dev/quarto-cli/discussions): suporte activo da comunidade e da Posit
+
+Consultar sempre primeiro antes de perguntar.
+
 ## Próximos passos
 
-- **Esta semana**: rever o guião e fazer o exercício
+- **Esta semana**: rever o guião e começar o exercício
 - **28 Abril (TP10)**: trabalho autónomo
-- **1 Maio**: entrega do site no Moodle
-- **13 Maio (TP11)**: apresentações finais
+- **1 Maio**: entrega formativa no Moodle (estrutura do site + TP8)
+- **13 Maio (TP11)**: apresentação final (site completo com declaração de IA)
 
 ## Contacto
 

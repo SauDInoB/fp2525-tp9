@@ -16,20 +16,36 @@ O trabalho é realizado em grupo, em continuidade com as entregas anteriores (E1
 
 ## O que entregar
 
-1. **Script de análise:** ficheiro `analise.R` ou documento `analise.qmd` com a análise reprodutível do dataset do vosso cenário. O código deve correr do início ao fim sem erros numa máquina limpa.
+Duas entregas: uma formativa a meio, e a apresentação final na TP11.
 
-2. **Tabela de características basais:** construída com `gtsummary`, integrada na página de resultados do site.
+### Entrega formativa (1 de Maio)
 
-3. **Gráfico do outcome primário:** construído com `ggplot2`, integrado na página de resultados do site.
+Mínimo viável. Site com a estrutura das cinco páginas, integrando o que já foi produzido até à TP8.
 
-4. **Projecto Quarto website publicado**, com as seguintes páginas:
-   - **Início** (`index.qmd`): resumo do ensaio, cenário, grupo, links principais
-   - **Protocolo** (`protocolo.qmd`): SPIRIT table e descrição do protocolo (da E1)
-   - **Materiais** (`materiais.qmd`): CRF, link para o formulário REDCap, protótipo da E2
-   - **Resultados** (`resultados.qmd`): tabela de características basais + gráfico do outcome primário
-   - **Equipa** (`equipa.qmd`): membros do grupo, papéis, contactos
+1. **Projecto Quarto website publicado** com as páginas:
+   - `index.qmd`: Início
+   - `protocolo.qmd`: Protocolo
+   - `materiais.qmd`: Materiais
+   - `resultados.qmd`: Resultados
+   - `equipa.qmd`: Equipa
+2. **Conteúdo da apresentação da TP8** integrado no site (pode estar numa só página ou distribuído; serve de ponto de partida).
+3. **Repositório Git** com histórico de commits coerente.
+4. **URL do site publicado** acessível a partir do Moodle.
 
-5. **Repositório Git** com todo o histórico de commits e o URL do site publicado.
+### Apresentação final (13 de Maio, TP11)
+
+O site é a apresentação. Deve conter todo o trabalho da disciplina, personalizado à medida do grupo (podem e devem alterar tema, acrescentar páginas extra, figuras, etc.).
+
+Compilação final mínima:
+
+- **Início**: resumo do ensaio (cenário, objectivos, grupo)
+- **Protocolo**: protocolo completo do ensaio (versão revista da E1)
+- **Materiais**: CRF, formulário REDCap, protótipos da E2
+- **Resultados**: resultados preliminares do piloto (tabela de características basais + gráfico do outcome primário)
+- **Equipa**: membros, papéis, contactos
+- **Declaração de uso de IA**: obrigatória, independentemente de IA ter sido ou não utilizada. Declarar que ferramentas foram usadas e em que secções, ou declarar ausência de utilização.
+
+Para além destes elementos, tudo o que considerem relevante mostrar do trabalho feito durante a disciplina.
 
 ---
 
@@ -109,9 +125,10 @@ Ambos os links devem estar funcionais no momento da submissão.
 
 ---
 
-## Prazo
+## Prazos
 
-**1 de Maio de 2026.**
+- **1 de Maio de 2026**: entrega formativa (site com estrutura + TP8)
+- **13 de Maio de 2026 (TP11)**: apresentação final (site completo)
 
 ---
 
@@ -133,3 +150,7 @@ Ambos os links devem estar funcionais no momento da submissão.
 [RStudio: Best Practices for Scientific Work](https://tiagojct.eu/notes/rst-bp/)
 
 Cobre projectos RStudio, estrutura de pastas, `here::here()`, estilo de código, e boas práticas de reprodutibilidade. Leitura obrigatória antes de começar o trabalho.
+
+## Documentação Quarto
+
+Toda a documentação oficial está em [quarto.org](https://quarto.org/): tutoriais, referência completa de YAML e opções de chunks, exemplos para cada formato. As [discussões no GitHub](https://github.com/quarto-dev/quarto-cli/discussions) têm suporte activo da comunidade e da equipa da Posit. Consultar primeiro antes de perguntar.
