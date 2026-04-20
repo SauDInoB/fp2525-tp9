@@ -1,0 +1,15 @@
+.DS_Store
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+_freeze/
+.quarto/
+docs/
+
+/.quarto/
+**/*.quarto_ipynb
+
+# projecto demo para gerar screenshots — nunca publicar
+demo-ensaio-htncare/

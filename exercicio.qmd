@@ -1,0 +1,134 @@
+---
+title: "Exercício · Análise dos dados e site Quarto do ensaio"
+format:
+  html:
+    toc: true
+    css: custom.css
+---
+
+## Contexto
+
+Este exercício é a componente da entrega E3 que incide sobre a análise dos dados do pré-teste do vosso cenário e a montagem do site Quarto que agrega o projecto do ensaio.
+
+O trabalho é realizado em grupo, em continuidade com as entregas anteriores (E1: protocolo, E2: materiais).
+
+---
+
+## O que entregar
+
+1. **Script de análise:** ficheiro `analise.R` ou documento `analise.qmd` com a análise reprodutível do dataset do vosso cenário. O código deve correr do início ao fim sem erros numa máquina limpa.
+
+2. **Tabela de características basais:** construída com `gtsummary`, integrada na página de resultados do site.
+
+3. **Gráfico do outcome primário:** construído com `ggplot2`, integrado na página de resultados do site.
+
+4. **Projecto Quarto website publicado**, com as seguintes páginas:
+   - **Início** (`index.qmd`): resumo do ensaio, cenário, grupo, links principais
+   - **Protocolo** (`protocolo.qmd`): SPIRIT table e descrição do protocolo (da E1)
+   - **Materiais** (`materiais.qmd`): CRF, link para o formulário REDCap, protótipo da E2
+   - **Resultados** (`resultados.qmd`): tabela de características basais + gráfico do outcome primário
+   - **Equipa** (`equipa.qmd`): membros do grupo, papéis, contactos
+
+5. **Repositório Git** com todo o histórico de commits e o URL do site publicado.
+
+---
+
+## Datasets
+
+Cada grupo descarrega o dataset correspondente ao seu cenário:
+
+| Cenário | Ficheiro | Outcome primário |
+|---------|----------|-----------------|
+| RespiRA | [ficheiros/respira.csv](ficheiros/respira.csv) | ACT às 12 semanas (`act_semana12`) |
+| MindMove | [ficheiros/mindmove.csv](ficheiros/mindmove.csv) | PHQ-9 às 8 semanas (`phq9_semana8`) |
+| GlucoCheck | [ficheiros/glucocheck.csv](ficheiros/glucocheck.csv) | HbA1c aos 6 meses (`hba1c_6meses`) |
+
+Guardar o dataset em `data/raw/` dentro do projecto RStudio. Não modificar o ficheiro original.
+
+---
+
+## Guia de trabalho
+
+### Análise
+
+Seguir o guião da aula. O script de análise deve:
+
+- Começar com `library()` para todos os pacotes necessários
+- Usar `here::here()` para todos os paths de ficheiros
+- Criar a tabela de características basais com `gtsummary::tbl_summary(by = grupo)`
+- Criar o gráfico do outcome primário com `ggplot2`
+- Não incluir `install.packages()` nem `setwd()`
+- Não guardar `.RData` (confirmar nas opções do RStudio)
+
+### Site Quarto
+
+O site deve ter o ficheiro `_quarto.yml` configurado com:
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "[Nome do vosso ensaio]"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - href: protocolo.qmd
+        text: Protocolo
+      - href: materiais.qmd
+        text: Materiais
+      - href: resultados.qmd
+        text: Resultados
+      - href: equipa.qmd
+        text: Equipa
+```
+
+A tabela e o gráfico devem ser integrados em `resultados.qmd` com blocos de código R com `echo: false`.
+
+### Publicação
+
+1. Criar repositório público no GitHub com o nome do ensaio (ex: `ensaio-htncare`)
+2. Copiar o ficheiro `.github/workflows/publish.yml` deste site para o vosso repositório
+3. Fazer push para `main`
+4. Activar GitHub Pages: Settings > Pages > Source > GitHub Actions
+5. Verificar que o site fica acessível no URL do GitHub Pages
+
+---
+
+## Como submeter
+
+Submeter no Moodle:
+
+- Link para o repositório Git
+- Link para o site publicado
+
+Ambos os links devem estar funcionais no momento da submissão.
+
+---
+
+## Prazo
+
+**1 de Maio de 2026.**
+
+---
+
+## Critérios de avaliação
+
+| Critério | Descrição |
+|----------|-----------|
+| Reprodutibilidade | O código corre sem erros a partir de uma sessão limpa. Projecto RStudio, paths com `here::here()`, sem `.RData`. |
+| Correcção da Tabela 1 | Variáveis correctas, estatísticas adequadas ao tipo de variável, estratificação por grupo. |
+| Correcção do gráfico | Outcome primário representado correctamente, labels legíveis, tema limpo. |
+| Integração no site | Tabela e gráfico integrados em `resultados.qmd` com código R executável. |
+| Estrutura do site | As cinco páginas existem e têm conteúdo relevante da E1 e E2. Navegação funcional. |
+| Commit history | Commits com mensagens descritivas, histórico que reflecte o progresso do trabalho. |
+
+---
+
+## Leitura recomendada
+
+[RStudio: Best Practices for Scientific Work](https://tiagojct.eu/notes/rst-bp/)
+
+Cobre projectos RStudio, estrutura de pastas, `here::here()`, estilo de código, e boas práticas de reprodutibilidade. Leitura obrigatória antes de começar o trabalho.

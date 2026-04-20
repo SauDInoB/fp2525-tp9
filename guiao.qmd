@@ -1,0 +1,462 @@
+---
+title: "Guião · R/RStudio e Publicação Web com Quarto"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    css: custom.css
+---
+
+Este guião complementa os slides da aula. Para os fundamentos de RStudio, ler primeiro [RStudio: Best Practices for Scientific Work](https://tiagojct.eu/notes/rst-bp/).
+
+---
+
+## 1. Configurar o ambiente
+
+**Objectivo:** garantir que R, RStudio, Quarto, e os pacotes necessários estão instalados e funcionais.
+
+### Verificar versões
+
+No console do RStudio:
+
+```r
+R.version$major        # deve ser 4 ou superior
+R.version$minor        # deve ser 4.x
+```
+
+No Terminal do RStudio:
+
+```bash
+quarto --version       # deve ser 1.5 ou superior
+```
+
+### Instalar pacotes
+
+Executar uma vez no console (não no script):
+
+```r
+install.packages(c("tidyverse", "here", "gtsummary", "gt", "janitor"))
+```
+
+### Verificar carregamento
+
+```r
+library(tidyverse)
+library(here)
+library(gtsummary)
+library(gt)
+library(janitor)
+```
+
+Se não aparecer nenhuma mensagem de erro, o ambiente está pronto.
+
+### Nota pedagógica
+
+`install.packages()` instala pacotes do CRAN para a biblioteca local do R. Só é necessário correr uma vez por máquina. `library()` carrega o pacote para a sessão actual e deve aparecer no topo de cada script.
+
+---
+
+## 2. Criar o projecto e ler os dados
+
+**Objectivo:** criar um projecto RStudio, organizar a estrutura de pastas, e ler o dataset demo.
+
+### Criar o projecto
+
+No RStudio: Ficheiro > New Project > New Directory > New Project
+
+Nomear o projecto, por exemplo `analise-htncare`. Confirmar que "Create a git repository" está activado.
+
+### Estrutura de pastas
+
+No Terminal do RStudio (ou com `dir.create()` no console):
+
+```r
+dir.create("data/raw",       recursive = TRUE)
+dir.create("data/processed", recursive = TRUE)
+dir.create("scripts")
+dir.create("outputs/tabelas",  recursive = TRUE)
+dir.create("outputs/figuras",  recursive = TRUE)
+```
+
+### Copiar o dataset
+
+Descarregar `htncare.csv` da página Exercício e guardar em `data/raw/`.
+
+### Criar o script de análise
+
+Novo ficheiro: `scripts/01_analise.R`
+
+```r
+# ---- carregar pacotes ----
+library(tidyverse)
+library(here)
+library(janitor)
+library(gtsummary)
+library(gt)
+
+# ---- ler dados ----
+dados <- read_csv(here("data", "raw", "htncare.csv"))
+```
+
+### Verificar a leitura
+
+```r
+dados
+```
+
+Output esperado: tibble com 30 linhas e 11 colunas.
+
+### Nota pedagógica
+
+`here::here()` constrói o path a partir da raiz do projecto RStudio. Quando partilhar o projecto com outro utilizador, o código funciona sem alterações porque `here()` resolve o path relativo correctamente em qualquer máquina.
+
+---
+
+## 3. Explorar os dados
+
+**Objectivo:** compreender a estrutura do dataset antes de qualquer análise.
+
+### glimpse e summary
+
+```r
+# ---- explorar estrutura ----
+glimpse(dados)
+summary(dados)
+```
+
+`glimpse()` mostra o tipo e os primeiros valores de cada variável. `summary()` dá estatísticas descritivas rápidas.
+
+### Verificar NAs
+
+```r
+# ---- verificar missings ----
+dados |>
+  summarise(across(everything(), ~ sum(is.na(.x))))
+```
+
+Output esperado: 3 NAs em `sbp_semana12` e `dbp_semana12` (10% de 30, os mesmos participantes em ambas as variáveis, simulando dropout às 12 semanas).
+
+### Limpar nomes com janitor
+
+Se o dataset tivesse nomes com espaços ou maiúsculas:
+
+```r
+# ---- limpar nomes (exemplo) ----
+dados_limpos <- dados |>
+  clean_names()
+```
+
+`clean_names()` converte todos os nomes para `snake_case` e remove acentos e caracteres especiais.
+
+### Manipulação básica
+
+```r
+# ---- filtrar grupo de intervenção ----
+intervencao <- dados |>
+  filter(grupo == "intervencao")
+
+# ---- seleccionar variáveis relevantes ----
+dados_sbp <- dados |>
+  select(patient_id, grupo, sbp_baseline, sbp_semana12)
+
+# ---- criar variável de diferença ----
+dados <- dados |>
+  mutate(reducao_sbp = sbp_baseline - sbp_semana12)
+
+# ---- contar por grupo e sexo ----
+dados |>
+  count(grupo, sexo)
+```
+
+### Nota pedagógica
+
+Explorar sempre os dados antes de analisar. Um `glimpse()` e um `summary()` evitam erros difíceis de detectar a seguir: tipos incorrectos, valores impossíveis, NAs inesperados.
+
+---
+
+## 4. Tabela de características basais
+
+**Objectivo:** construir a Tabela 1 com `gtsummary`.
+
+### Tabela mínima
+
+```r
+# ---- tabela 1 mínima ----
+tabela_basal <- dados |>
+  select(grupo, idade, sexo, imc, diabetes, sbp_baseline, dbp_baseline, adesao) |>
+  tbl_summary(by = grupo)
+
+tabela_basal
+```
+
+### Adicionar overall e p-value
+
+```r
+# ---- tabela com total e p-values ----
+tabela_basal <- dados |>
+  select(grupo, idade, sexo, imc, diabetes, sbp_baseline, dbp_baseline, adesao) |>
+  tbl_summary(by = grupo) |>
+  add_overall() |>
+  add_p()
+
+tabela_basal
+```
+
+### Formatar labels e estatísticas
+
+```r
+# ---- tabela formatada ----
+tabela_basal_fmt <- dados |>
+  select(grupo, idade, sexo, imc, diabetes, sbp_baseline, dbp_baseline, adesao) |>
+  tbl_summary(
+    by = grupo,
+    label = list(
+      idade        ~ "Idade (anos)",
+      sexo         ~ "Sexo",
+      imc          ~ "IMC (kg/m²)",
+      diabetes     ~ "Diabetes (sim/não)",
+      sbp_baseline ~ "PAS basal (mmHg)",
+      dbp_baseline ~ "PAD basal (mmHg)",
+      adesao       ~ "Adesão ao tratamento"
+    ),
+    statistic = list(
+      all_continuous()  ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    digits = all_continuous() ~ 1,
+    missing = "no"
+  ) |>
+  add_overall() |>
+  modify_header(label ~ "**Variável**")
+
+tabela_basal_fmt
+```
+
+### Exportar para HTML
+
+```r
+# ---- exportar tabela ----
+tabela_basal_fmt |>
+  as_gt() |>
+  gt::gtsave(here("outputs", "tabelas", "tabela_basal.html"))
+```
+
+### Output esperado
+
+Uma tabela com três colunas (Intervenção, Controlo, Total), com médias e desvios-padrão para variáveis contínuas e n (%) para categóricas.
+
+### Nota pedagógica
+
+`tbl_summary()` detecta automaticamente se uma variável é contínua ou categórica. Variáveis numéricas com poucos valores únicos podem ser tratadas como categóricas: verificar e usar `as.factor()` se necessário.
+
+---
+
+## 5. Gráfico do outcome primário
+
+**Objectivo:** visualizar a distribuição do outcome primário por grupo com `ggplot2`.
+
+### Boxplot base
+
+```r
+# ---- boxplot base ----
+ggplot(dados, aes(x = grupo, y = sbp_semana12)) +
+  geom_boxplot()
+```
+
+### Adicionar pontos
+
+```r
+# ---- boxplot com pontos ----
+ggplot(dados, aes(x = grupo, y = sbp_semana12, colour = grupo)) +
+  geom_boxplot(outlier.shape = NA, width = 0.4) +
+  geom_jitter(width = 0.12, alpha = 0.7, size = 2.5)
+```
+
+`outlier.shape = NA` remove os outliers do boxplot para não duplicar os pontos do `geom_jitter()`. `alpha` controla a transparência.
+
+### Versão final com formatação
+
+```r
+# ---- figura final ----
+fig_outcome <- ggplot(
+  dados |> filter(!is.na(sbp_semana12)),
+  aes(x = grupo, y = sbp_semana12, colour = grupo)
+) +
+  geom_boxplot(outlier.shape = NA, width = 0.4, linewidth = 0.7) +
+  geom_jitter(width = 0.12, alpha = 0.7, size = 2.5) +
+  scale_colour_manual(
+    values = c("intervencao" = "#2C3E50", "controlo" = "#7A9B9E")
+  ) +
+  scale_x_discrete(
+    labels = c("intervencao" = "Intervenção", "controlo" = "Controlo")
+  ) +
+  labs(
+    x     = "Grupo",
+    y     = "Pressão sistólica às 12 semanas (mmHg)",
+    title = "HTNCare: outcome primário"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "none")
+
+fig_outcome
+```
+
+### Guardar
+
+```r
+# ---- guardar figura ----
+ggsave(
+  here("outputs", "figuras", "figura_outcome.png"),
+  plot   = fig_outcome,
+  width  = 6,
+  height = 4,
+  dpi    = 150
+)
+```
+
+### Nota pedagógica
+
+`filter(!is.na(sbp_semana12))` remove os NAs antes de passar ao ggplot, evitando avisos de linhas removidas. Tratar os NAs explicitamente antes de visualizar é mais claro do que deixar o ggplot ignorá-los silenciosamente.
+
+---
+
+## 6. Projecto Quarto website
+
+**Objectivo:** criar um website Quarto com múltiplas páginas e publicá-lo no GitHub Pages.
+
+### Criar o projecto
+
+No Terminal do RStudio:
+
+```bash
+quarto create project website ensaio-site
+cd ensaio-site
+```
+
+### Estrutura gerada
+
+```
+ensaio-site/
+├── _quarto.yml
+├── index.qmd
+├── about.qmd
+└── styles.css
+```
+
+### Configurar _quarto.yml
+
+Editar `_quarto.yml`:
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ensaio [nome do cenário]"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - href: protocolo.qmd
+        text: Protocolo
+      - href: materiais.qmd
+        text: Materiais
+      - href: resultados.qmd
+        text: Resultados
+      - href: equipa.qmd
+        text: Equipa
+```
+
+### Criar as páginas
+
+Criar `protocolo.qmd`:
+
+```markdown
+---
+title: "Protocolo"
+format: html
+---
+
+## Resumo do protocolo
+
+[Inserir a SPIRIT table e descrição do protocolo da E1]
+```
+
+Criar `resultados.qmd` com análise integrada:
+
+````markdown
+---
+title: "Resultados"
+format: html
+---
+
+## Características basais
+
+```{{r}}
+#| echo: false
+#| message: false
+library(tidyverse)
+library(gtsummary)
+library(here)
+
+dados <- read_csv(here("data", "raw", "htncare.csv"))
+
+dados |>
+  select(grupo, idade, sexo, sbp_baseline, dbp_baseline) |>
+  tbl_summary(by = grupo) |>
+  add_overall()
+```
+
+## Outcome primário
+
+```{{r}}
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+
+ggplot(dados |> filter(!is.na(sbp_semana12)),
+       aes(x = grupo, y = sbp_semana12, colour = grupo)) +
+  geom_boxplot(outlier.shape = NA, width = 0.4) +
+  geom_jitter(width = 0.12, alpha = 0.7) +
+  scale_colour_manual(
+    values = c("intervencao" = "#2C3E50", "controlo" = "#7A9B9E")
+  ) +
+  labs(x = "Grupo", y = "PAS às 12 semanas (mmHg)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+````
+
+### Preview e render
+
+```bash
+# ver em tempo real
+quarto preview
+
+# build completo
+quarto render
+```
+
+### Publicar no GitHub Pages
+
+1. Criar repositório no GitHub (ex: `ensaio-htncare`)
+2. Inicializar git no projecto local:
+
+```bash
+git init
+git add .
+git commit -m "primeiro commit"
+git remote add origin https://github.com/utilizador/ensaio-htncare.git
+git push -u origin main
+```
+
+3. Copiar o ficheiro `.github/workflows/publish.yml` deste site para o repositório do ensaio
+4. No GitHub: Settings > Pages > Source > GitHub Actions
+5. Aguardar o workflow correr (separador Actions no GitHub)
+
+O site fica disponível em `https://utilizador.github.io/ensaio-htncare`.
+
+### Nota pedagógica
+
+`output-dir: docs` em `_quarto.yml` é necessário para a opção "Deploy from branch". Com GitHub Actions (como neste projecto), o workflow faz deploy para `gh-pages` e não é preciso ter `docs/` em git. Adicionar `docs/` ao `.gitignore` para não fazer commit do output renderizado.

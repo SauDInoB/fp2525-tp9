@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - guiao.qmd
+    - exercicio.qmd
+
+website:
+  title: "TP9 · R/RStudio e Publicação Web"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Slides
+      - href: guiao.qmd
+        text: Guião
+      - href: exercicio.qmd
+        text: Exercício
+  sidebar: false
+
+format:
+  html:
+    theme: cosmo
+    css: custom.css
