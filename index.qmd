@@ -1274,40 +1274,6 @@ jobs:
 
 Para este projecto, GitHub Pages é mais simples.
 
-# TP10: trabalho autónomo {background-color="#2C3E50"}
-
-## TP10: sem aula presencial
-
-Próxima semana. Trabalham autonomamente no site do ensaio.
-
-## Checklist da TP10
-
-1. Criar projecto Quarto website
-2. Integrar protocolo (E1)
-3. Integrar materiais (E2)
-4. Analisar o dataset do cenário
-
-## Checklist da TP10 (cont.)
-
-5. Criar tabela e gráfico
-6. Integrar resultados
-7. Preencher página equipa
-8. Rever estilo e coesão
-
-## Checklist da TP10 (fim)
-
-9. `quarto render`, commit, push
-10. Verificar o deploy
-11. Partilhar link no Moodle
-
-## Dataset do vosso cenário
-
-Descarregar de `ficheiros/` neste site:
-
-- RespiRA: `respira.csv`
-- MindMove: `mindmove.csv`
-- GlucoCheck: `glucocheck.csv`
-
 # Encerramento {background-color="#2C3E50"}
 
 ## Referência obrigatória
