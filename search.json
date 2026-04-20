@@ -546,41 +546,6 @@
     "text": "Alternativa: Posit Connect Cloud\nPosit Connect Cloud publica aplicações Shiny, documentos Quarto, e APIs.\n\nDeploy via drag-and-drop ou GitHub\nPlano gratuito disponível\nÚtil para sites dinâmicos\n\nPara este projecto, GitHub Pages é mais simples."
   },
   {
-    "objectID": "index.html#tp10-sem-aula-presencial",
-    "href": "index.html#tp10-sem-aula-presencial",
-    "title": "R/RStudio e Publicação Web com Quarto",
-    "section": "TP10: sem aula presencial",
-    "text": "TP10: sem aula presencial\nPróxima semana. Trabalham autonomamente no site do ensaio."
-  },
-  {
-    "objectID": "index.html#checklist-da-tp10",
-    "href": "index.html#checklist-da-tp10",
-    "title": "R/RStudio e Publicação Web com Quarto",
-    "section": "Checklist da TP10",
-    "text": "Checklist da TP10\n\nCriar projecto Quarto website\nIntegrar protocolo (E1)\nIntegrar materiais (E2)\nAnalisar o dataset do cenário"
-  },
-  {
-    "objectID": "index.html#checklist-da-tp10-cont.",
-    "href": "index.html#checklist-da-tp10-cont.",
-    "title": "R/RStudio e Publicação Web com Quarto",
-    "section": "Checklist da TP10 (cont.)",
-    "text": "Checklist da TP10 (cont.)\n\nCriar tabela e gráfico\nIntegrar resultados\nPreencher página equipa\nRever estilo e coesão"
-  },
-  {
-    "objectID": "index.html#checklist-da-tp10-fim",
-    "href": "index.html#checklist-da-tp10-fim",
-    "title": "R/RStudio e Publicação Web com Quarto",
-    "section": "Checklist da TP10 (fim)",
-    "text": "Checklist da TP10 (fim)\n\nquarto render, commit, push\nVerificar o deploy\nPartilhar link no Moodle"
-  },
-  {
-    "objectID": "index.html#dataset-do-vosso-cenário",
-    "href": "index.html#dataset-do-vosso-cenário",
-    "title": "R/RStudio e Publicação Web com Quarto",
-    "section": "Dataset do vosso cenário",
-    "text": "Dataset do vosso cenário\nDescarregar de ficheiros/ neste site:\n\nRespiRA: respira.csv\nMindMove: mindmove.csv\nGlucoCheck: glucocheck.csv"
-  },
-  {
     "objectID": "index.html#referência-obrigatória",
     "href": "index.html#referência-obrigatória",
     "title": "R/RStudio e Publicação Web com Quarto",
