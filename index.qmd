@@ -1212,14 +1212,14 @@ Processa todos os `.qmd` e escreve em `docs/`.
 :::: {.columns}
 
 ::: {.column width="45%"}
-1. Commit de todos os ficheiros
-2. Push para `main`
-3. GitHub > Settings > Pages
-4. Source: GitHub Actions
+1. Commit e push para `main`
+2. Aguardar o workflow correr uma vez (cria a branch `gh-pages`)
+3. Settings > Pages > Source: "Deploy from a branch"
+4. Branch: `gh-pages` · Folder: `/ (root)` · Save
 :::
 
 ::: {.column width="55%"}
-![](ficheiros/img/github-pages-settings.png){fig-alt="Página Settings > Pages com Source: GitHub Actions"}
+![](ficheiros/img/github-pages-settings.png){fig-alt="Página Settings > Pages com Source 'Deploy from a branch' apontado a gh-pages/root"}
 :::
 
 ::::
@@ -1243,9 +1243,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4                     # <3>
       - uses: r-lib/actions/setup-r@v2                # <4>
-      - uses: quarto-dev/quarto-actions/setup@v2      # <5>
-      - run: quarto render                            # <6>
-      - uses: quarto-dev/quarto-actions/publish@v2    # <7>
+      - uses: r-lib/actions/setup-r-dependencies@v2   # <5>
+        with:
+          packages: |
+            tidyverse
+            gtsummary
+      - uses: quarto-dev/quarto-actions/setup@v2      # <6>
+      - run: quarto render                            # <7>
+      - uses: quarto-dev/quarto-actions/publish@v2    # <8>
         with:
           target: gh-pages
 ```
@@ -1253,10 +1258,11 @@ jobs:
 1. Dispara a cada push para `main`.
 2. Máquina virtual Ubuntu fornecida pelo GitHub.
 3. Clona o repositório.
-4. Instala R e pacotes.
-5. Instala Quarto.
-6. Renderiza o site.
-7. Publica o output na branch `gh-pages`.
+4. Instala R.
+5. Instala pacotes R necessários.
+6. Instala Quarto.
+7. Renderiza o site.
+8. Publica o output na branch `gh-pages`.
 
 ## Alternativa: Posit Connect Cloud
 

@@ -92,8 +92,9 @@ A tabela e o gráfico devem ser integrados em `resultados.qmd` com blocos de có
 1. Criar repositório público no GitHub com o nome do ensaio (ex: `ensaio-htncare`)
 2. Copiar o ficheiro `.github/workflows/publish.yml` deste site para o vosso repositório
 3. Fazer push para `main`
-4. Activar GitHub Pages: Settings > Pages > Source > GitHub Actions
-5. Verificar que o site fica acessível no URL do GitHub Pages
+4. Aguardar o primeiro run do workflow criar a branch `gh-pages`
+5. Activar GitHub Pages: Settings > Pages > Source "Deploy from a branch" · Branch `gh-pages` · Folder `/ (root)`
+6. Verificar que o site fica acessível no URL do GitHub Pages
 
 ---
 

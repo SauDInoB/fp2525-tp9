@@ -51,6 +51,16 @@ jobs:
       - name: Render Quarto Project
         run: quarto render
 
+      - name: Bootstrap gh-pages branch if missing
+        run: |
+          if ! git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git config user.email "actions@github.com"
+            git config user.name "github-actions"
+            tree=$(printf '' | git mktree)
+            commit=$(git commit-tree $tree -m "init gh-pages")
+            git push origin $commit:refs/heads/gh-pages
+          fi
+
       - name: Deploy to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:

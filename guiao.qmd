@@ -452,11 +452,12 @@ git push -u origin main
 ```
 
 3. Copiar o ficheiro `.github/workflows/publish.yml` deste site para o repositório do ensaio
-4. No GitHub: Settings > Pages > Source > GitHub Actions
-5. Aguardar o workflow correr (separador Actions no GitHub)
+4. Aguardar o workflow correr (separador Actions no GitHub); o primeiro run cria a branch `gh-pages`
+5. No GitHub: Settings > Pages > Source: "Deploy from a branch" · Branch: `gh-pages` · Folder: `/ (root)` · Save
+6. Aguardar o build do Pages terminar (~30 segundos)
 
 O site fica disponível em `https://utilizador.github.io/ensaio-htncare`.
 
 ### Nota pedagógica
 
-`output-dir: docs` em `_quarto.yml` é necessário para a opção "Deploy from branch". Com GitHub Actions (como neste projecto), o workflow faz deploy para `gh-pages` e não é preciso ter `docs/` em git. Adicionar `docs/` ao `.gitignore` para não fazer commit do output renderizado.
+`output-dir: docs` em `_quarto.yml` é necessário para que o build local escreva os ficheiros numa pasta consistente. O workflow usa `quarto-actions/publish@v2` para empurrar o output para a branch `gh-pages`; esta é a branch que o GitHub Pages serve. Mantém `docs/` no `.gitignore` para não fazer commit do output renderizado.
