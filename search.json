@@ -1,0 +1,646 @@
+[
+  {
+    "objectID": "exercicio.html",
+    "href": "exercicio.html",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "",
+    "text": "Este exercício é a componente da entrega E3 que incide sobre a análise dos dados do pré-teste do vosso cenário e a montagem do site Quarto que agrega o projecto do ensaio.\nO trabalho é realizado em grupo, em continuidade com as entregas anteriores (E1: protocolo, E2: materiais)."
+  },
+  {
+    "objectID": "exercicio.html#contexto",
+    "href": "exercicio.html#contexto",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "",
+    "text": "Este exercício é a componente da entrega E3 que incide sobre a análise dos dados do pré-teste do vosso cenário e a montagem do site Quarto que agrega o projecto do ensaio.\nO trabalho é realizado em grupo, em continuidade com as entregas anteriores (E1: protocolo, E2: materiais)."
+  },
+  {
+    "objectID": "exercicio.html#o-que-entregar",
+    "href": "exercicio.html#o-que-entregar",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "O que entregar",
+    "text": "O que entregar\n\nScript de análise: ficheiro analise.R ou documento analise.qmd com a análise reprodutível do dataset do vosso cenário. O código deve correr do início ao fim sem erros numa máquina limpa.\nTabela de características basais: construída com gtsummary, integrada na página de resultados do site.\nGráfico do outcome primário: construído com ggplot2, integrado na página de resultados do site.\nProjecto Quarto website publicado, com as seguintes páginas:\n\nInício (index.qmd): resumo do ensaio, cenário, grupo, links principais\nProtocolo (protocolo.qmd): SPIRIT table e descrição do protocolo (da E1)\nMateriais (materiais.qmd): CRF, link para o formulário REDCap, protótipo da E2\nResultados (resultados.qmd): tabela de características basais + gráfico do outcome primário\nEquipa (equipa.qmd): membros do grupo, papéis, contactos\n\nRepositório Git com todo o histórico de commits e o URL do site publicado."
+  },
+  {
+    "objectID": "exercicio.html#datasets",
+    "href": "exercicio.html#datasets",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "Datasets",
+    "text": "Datasets\nCada grupo descarrega o dataset correspondente ao seu cenário:\n\n\n\nCenário\nFicheiro\nOutcome primário\n\n\n\n\nRespiRA\nficheiros/respira.csv\nACT às 12 semanas (act_semana12)\n\n\nMindMove\nficheiros/mindmove.csv\nPHQ-9 às 8 semanas (phq9_semana8)\n\n\nGlucoCheck\nficheiros/glucocheck.csv\nHbA1c aos 6 meses (hba1c_6meses)\n\n\n\nGuardar o dataset em data/raw/ dentro do projecto RStudio. Não modificar o ficheiro original."
+  },
+  {
+    "objectID": "exercicio.html#guia-de-trabalho",
+    "href": "exercicio.html#guia-de-trabalho",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "Guia de trabalho",
+    "text": "Guia de trabalho\n\nAnálise\nSeguir o guião da aula. O script de análise deve:\n\nComeçar com library() para todos os pacotes necessários\nUsar here::here() para todos os paths de ficheiros\nCriar a tabela de características basais com gtsummary::tbl_summary(by = grupo)\nCriar o gráfico do outcome primário com ggplot2\nNão incluir install.packages() nem setwd()\nNão guardar .RData (confirmar nas opções do RStudio)\n\n\n\nSite Quarto\nO site deve ter o ficheiro _quarto.yml configurado com:\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"[Nome do vosso ensaio]\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Início\n      - href: protocolo.qmd\n        text: Protocolo\n      - href: materiais.qmd\n        text: Materiais\n      - href: resultados.qmd\n        text: Resultados\n      - href: equipa.qmd\n        text: Equipa\nA tabela e o gráfico devem ser integrados em resultados.qmd com blocos de código R com echo: false.\n\n\nPublicação\n\nCriar repositório público no GitHub com o nome do ensaio (ex: ensaio-htncare)\nCopiar o ficheiro .github/workflows/publish.yml deste site para o vosso repositório\nFazer push para main\nActivar GitHub Pages: Settings &gt; Pages &gt; Source &gt; GitHub Actions\nVerificar que o site fica acessível no URL do GitHub Pages"
+  },
+  {
+    "objectID": "exercicio.html#como-submeter",
+    "href": "exercicio.html#como-submeter",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "Como submeter",
+    "text": "Como submeter\nSubmeter no Moodle:\n\nLink para o repositório Git\nLink para o site publicado\n\nAmbos os links devem estar funcionais no momento da submissão."
+  },
+  {
+    "objectID": "exercicio.html#prazo",
+    "href": "exercicio.html#prazo",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "Prazo",
+    "text": "Prazo\n1 de Maio de 2026."
+  },
+  {
+    "objectID": "exercicio.html#critérios-de-avaliação",
+    "href": "exercicio.html#critérios-de-avaliação",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "Critérios de avaliação",
+    "text": "Critérios de avaliação\n\n\n\n\n\n\n\nCritério\nDescrição\n\n\n\n\nReprodutibilidade\nO código corre sem erros a partir de uma sessão limpa. Projecto RStudio, paths com here::here(), sem .RData.\n\n\nCorrecção da Tabela 1\nVariáveis correctas, estatísticas adequadas ao tipo de variável, estratificação por grupo.\n\n\nCorrecção do gráfico\nOutcome primário representado correctamente, labels legíveis, tema limpo.\n\n\nIntegração no site\nTabela e gráfico integrados em resultados.qmd com código R executável.\n\n\nEstrutura do site\nAs cinco páginas existem e têm conteúdo relevante da E1 e E2. Navegação funcional.\n\n\nCommit history\nCommits com mensagens descritivas, histórico que reflecte o progresso do trabalho."
+  },
+  {
+    "objectID": "exercicio.html#leitura-recomendada",
+    "href": "exercicio.html#leitura-recomendada",
+    "title": "Exercício · Análise dos dados e site Quarto do ensaio",
+    "section": "Leitura recomendada",
+    "text": "Leitura recomendada\nRStudio: Best Practices for Scientific Work\nCobre projectos RStudio, estrutura de pastas, here::here(), estilo de código, e boas práticas de reprodutibilidade. Leitura obrigatória antes de começar o trabalho."
+  },
+  {
+    "objectID": "index.html#onde-estamos-no-arco-do-ensaio",
+    "href": "index.html#onde-estamos-no-arco-do-ensaio",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Onde estamos no arco do ensaio",
+    "text": "Onde estamos no arco do ensaio\n\n\n\nFase\nEstado\n\n\n\n\nTP1 a TP8\nConcluído\n\n\nE2 (materiais)\nEntregue\n\n\nTP9 (hoje)\nAnálise em R + site Quarto\n\n\nTP10 (28 Abril)\nTrabalho autónomo\n\n\nTP11 + E3 (13 Maio)\nApresentações e entrega final"
+  },
+  {
+    "objectID": "index.html#objectivos-desta-aula",
+    "href": "index.html#objectivos-desta-aula",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Objectivos desta aula",
+    "text": "Objectivos desta aula\n\nAnalisar os dados do pré-teste em R\nConstruir uma Tabela 1 com gtsummary\nConstruir o gráfico do outcome primário com ggplot2\nMontar um site Quarto multi-página\nPublicar no GitHub Pages"
+  },
+  {
+    "objectID": "index.html#pré-requisitos",
+    "href": "index.html#pré-requisitos",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Pré-requisitos",
+    "text": "Pré-requisitos\nVerificar antes de começar:\n\nR 4.4 ou superior\nRStudio recente\nQuarto CLI 1.5 ou superior\nConta GitHub activa"
+  },
+  {
+    "objectID": "index.html#instalar-os-pacotes",
+    "href": "index.html#instalar-os-pacotes",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Instalar os pacotes",
+    "text": "Instalar os pacotes\ninstall.packages(c(\n  \"tidyverse\",\n  \"here\",\n  \"gtsummary\",\n  \"gt\",\n  \"janitor\"\n))\nCorrer uma única vez, no console, nunca dentro de um script."
+  },
+  {
+    "objectID": "index.html#verificar-carregamento",
+    "href": "index.html#verificar-carregamento",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Verificar carregamento",
+    "text": "Verificar carregamento\nlibrary(tidyverse)\nlibrary(here)\nlibrary(gtsummary)\nlibrary(gt)\nlibrary(janitor)\nSem mensagens de erro: ambiente pronto."
+  },
+  {
+    "objectID": "index.html#projectos-rstudio",
+    "href": "index.html#projectos-rstudio",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Projectos RStudio",
+    "text": "Projectos RStudio\nUm projecto é uma pasta com um ficheiro .Rproj.\nDefine a raiz do trabalho e isola o ambiente."
+  },
+  {
+    "objectID": "index.html#porquê-usar-projectos",
+    "href": "index.html#porquê-usar-projectos",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Porquê usar projectos",
+    "text": "Porquê usar projectos\n\nhere::here() funciona a partir da raiz do projecto\nSem setwd() no código\nCada projecto tem o seu histórico\nPartilha e reprodução sem adaptações de paths"
+  },
+  {
+    "objectID": "index.html#criar-um-projecto",
+    "href": "index.html#criar-um-projecto",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Criar um projecto",
+    "text": "Criar um projecto\n\n\nFicheiro &gt; New Project &gt; New Directory &gt; New Project\nConfirmar “Create a git repository”.\nLeitura obrigatória pós-aula: tiagojct.eu/notes/rst-bp"
+  },
+  {
+    "objectID": "index.html#estrutura-de-um-projecto",
+    "href": "index.html#estrutura-de-um-projecto",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Estrutura de um projecto",
+    "text": "Estrutura de um projecto\nensaio-analise/\n├── data/\n│   ├── raw/\n│   └── processed/\n├── scripts/\n├── outputs/\n│   ├── tabelas/\n│   └── figuras/\n└── ensaio-analise.Rproj"
+  },
+  {
+    "objectID": "index.html#responsabilidades-por-pasta",
+    "href": "index.html#responsabilidades-por-pasta",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Responsabilidades por pasta",
+    "text": "Responsabilidades por pasta\n\ndata/raw/: só de leitura, dados originais\ndata/processed/: dados limpos, gerados por scripts\nscripts/: todo o código\noutputs/: tabelas e figuras derivadas\n\nOs outputs são sempre regeneráveis a partir do código."
+  },
+  {
+    "objectID": "index.html#não-guardar-.rdata",
+    "href": "index.html#não-guardar-.rdata",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Não guardar .RData",
+    "text": "Não guardar .RData\nPor omissão, o RStudio guarda o workspace ao fechar.\nDizer sempre não."
+  },
+  {
+    "objectID": "index.html#desactivar-permanentemente",
+    "href": "index.html#desactivar-permanentemente",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Desactivar permanentemente",
+    "text": "Desactivar permanentemente\n\n\nTools &gt; Global Options &gt; General &gt; Workspace\n\n“Restore .RData into workspace at startup”: desactivar\n“Save workspace to .RData on exit”: Never"
+  },
+  {
+    "objectID": "index.html#porquê-não-guardar",
+    "href": "index.html#porquê-não-guardar",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Porquê não guardar",
+    "text": "Porquê não guardar\nO código deve ser a única fonte de verdade.\nUm workspace guardado esconde dependências e impede reprodução."
+  },
+  {
+    "objectID": "index.html#atalhos-essenciais",
+    "href": "index.html#atalhos-essenciais",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Atalhos essenciais",
+    "text": "Atalhos essenciais\n\n\n\nAtalho\nAcção\n\n\n\n\nCtrl/Cmd + Enter\nExecutar linha ou selecção\n\n\nCtrl/Cmd + Shift + M\nInserir pipe (ver nota abaixo)\n\n\nAlt + -\nInserir &lt;-\n\n\nCtrl/Cmd + Shift + F10\nReiniciar sessão R\n\n\n\nPor omissão, Ctrl/Cmd + Shift + M insere %&gt;%. Para o pipe nativo \\|&gt;, activar Tools &gt; Global Options &gt; Code &gt; “Use native pipe operator”."
+  },
+  {
+    "objectID": "index.html#mais-atalhos-úteis",
+    "href": "index.html#mais-atalhos-úteis",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Mais atalhos úteis",
+    "text": "Mais atalhos úteis\n\n\n\nAtalho\nAcção\n\n\n\n\nCtrl/Cmd + Shift + C\nComentar/descomentar\n\n\nCtrl/Cmd + L\nLimpar consola\n\n\nTab\nAuto-completar\n\n\n\nReiniciar a sessão antes de renderizar é boa prática."
+  },
+  {
+    "objectID": "index.html#estilo-de-código",
+    "href": "index.html#estilo-de-código",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Estilo de código",
+    "text": "Estilo de código\n# ---- carregar pacotes ----\nlibrary(tidyverse)\nlibrary(here)\n\n# ---- ler dados ----\ndados &lt;- read_csv(here(\"data\", \"raw\", \"htncare.csv\"))"
+  },
+  {
+    "objectID": "index.html#regras-de-estilo",
+    "href": "index.html#regras-de-estilo",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Regras de estilo",
+    "text": "Regras de estilo\n\nNomes descritivos em snake_case\nSections com # ---- para navegação no outline\nUma operação por linha dentro do pipe\nPipe nativo |&gt;, não %&gt;%\nlibrary() no topo, install.packages() nunca no script"
+  },
+  {
+    "objectID": "index.html#positron",
+    "href": "index.html#positron",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Positron",
+    "text": "Positron\nPositron é o novo IDE da Posit, baseado em VS Code.\n\nMesmo motor Quarto\nSuporte nativo a Python e R em simultâneo\nInterface familiar para quem já usa VS Code\n\nHoje usamos RStudio. Positron é o caminho a explorar depois."
+  },
+  {
+    "objectID": "index.html#carregar-pacotes",
+    "href": "index.html#carregar-pacotes",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Carregar pacotes",
+    "text": "Carregar pacotes\nlibrary(tidyverse)\nlibrary(here)\nlibrary(janitor)\nlibrary(gtsummary)\nlibrary(gt)\nSempre no topo do script."
+  },
+  {
+    "objectID": "index.html#library-vs-install.packages",
+    "href": "index.html#library-vs-install.packages",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "library vs install.packages",
+    "text": "library vs install.packages\nlibrary() carrega um pacote já instalado.\ninstall.packages() instala do CRAN.\nSó instalar uma vez, no console. Nunca num script partilhado."
+  },
+  {
+    "objectID": "index.html#paths-frágeis",
+    "href": "index.html#paths-frágeis",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Paths frágeis",
+    "text": "Paths frágeis\n# depende do directório de cada utilizador\nread_csv(\"C:/Users/joao/ensaio/data/htncare.csv\")\nEste código só funciona na máquina do João."
+  },
+  {
+    "objectID": "index.html#paths-reprodutíveis-com-here",
+    "href": "index.html#paths-reprodutíveis-com-here",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Paths reprodutíveis com here",
+    "text": "Paths reprodutíveis com here\nread_csv(here(\"data\", \"raw\", \"htncare.csv\"))\nhere::here() resolve o path a partir da raiz do projecto.\nFunciona em qualquer máquina."
+  },
+  {
+    "objectID": "index.html#o-dataset-da-aula",
+    "href": "index.html#o-dataset-da-aula",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "O dataset da aula",
+    "text": "O dataset da aula\nHTNCare: ensaio fictício sobre controlo da hipertensão.\n\nN = 30 (15 intervenção + 15 controlo)\nOutcome primário: pressão sistólica às 12 semanas"
+  },
+  {
+    "objectID": "index.html#variáveis-do-htncare",
+    "href": "index.html#variáveis-do-htncare",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Variáveis do HTNCare",
+    "text": "Variáveis do HTNCare\n\npatient_id: identificador\ngrupo: intervencao / controlo\nidade, sexo, imc, diabetes: características basais\nsbp_baseline, sbp_semana12: pressão sistólica (mmHg)\ndbp_baseline, dbp_semana12: pressão diastólica (mmHg)\nadesao: adesão ao tratamento (0 a 1)"
+  },
+  {
+    "objectID": "index.html#ler-o-dataset",
+    "href": "index.html#ler-o-dataset",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Ler o dataset",
+    "text": "Ler o dataset\n\n\n# read_csv: lê um ficheiro CSV\ndados &lt;- read_csv(\n  here(\"data\", \"raw\", \"htncare.csv\")\n)\ndados\n\n\n\n# A tibble: 6 × 6\n  patient_id grupo       idade sexo  sbp_baseline sbp_semana12\n  &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 HTN001     intervencao  52.2 M             141          131.\n2 HTN002     intervencao  59.6 F             180          168.\n3 HTN003     intervencao  45.3 F             154.         140.\n4 HTN004     intervencao  67.9 M             141          131 \n5 HTN005     intervencao  50   M             158.         150.\n6 HTN006     intervencao  40   M             158          148.\n\n\n\nTibble com 30 linhas e 11 colunas (mostradas 6 variáveis acima)."
+  },
+  {
+    "objectID": "index.html#explorar-a-estrutura",
+    "href": "index.html#explorar-a-estrutura",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Explorar a estrutura",
+    "text": "Explorar a estrutura\n\n\n# glimpse: estrutura e tipos\nglimpse(dados)\nMostra o tipo e os primeiros valores de cada variável.\n\n\n\nRows: 30\nColumns: 11\n$ patient_id   &lt;chr&gt; \"HTN001\", \"HTN002\", \"HTN003\", \"HTN004\", \"HTN005\", \"HTN006…\n$ grupo        &lt;chr&gt; \"intervencao\", \"intervencao\", \"intervencao\", \"intervencao…\n$ idade        &lt;dbl&gt; 52.2, 59.6, 45.3, 67.9, 50.0, 40.0, 40.0, 58.2, 54.2, 64.…\n$ sexo         &lt;chr&gt; \"M\", \"F\", \"F\", \"M\", \"M\", \"M\", \"F\", \"M\", \"M\", \"M\", \"M\", \"M…\n$ imc          &lt;dbl&gt; 29.0, 30.4, 30.6, 20.5, 28.3, 34.6, 30.6, 19.8, 26.9, 27.…\n$ diabetes     &lt;dbl&gt; 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, …\n$ sbp_baseline &lt;dbl&gt; 141.0, 180.0, 154.3, 141.0, 157.5, 158.0, 158.5, 141.0, 1…\n$ sbp_semana12 &lt;dbl&gt; 130.6, 167.7, 139.9, 131.0, 150.3, 147.7, 141.3, 135.3, 1…\n$ dbp_baseline &lt;dbl&gt; 90.8, 88.0, 83.0, 101.5, 97.4, 93.6, 94.1, 102.4, 85.7, 8…\n$ dbp_semana12 &lt;dbl&gt; 89.9, 89.0, 74.9, 92.2, 81.3, 90.2, 85.5, 94.4, 75.7, 89.…\n$ adesao       &lt;dbl&gt; 0.74, 0.89, 0.75, 0.80, 0.81, 0.90, 0.79, 0.87, 0.92, 0.8…"
+  },
+  {
+    "objectID": "index.html#estatísticas-rápidas",
+    "href": "index.html#estatísticas-rápidas",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Estatísticas rápidas",
+    "text": "Estatísticas rápidas\n\n\n# summary: estatísticas rápidas\ndados |&gt;\n  select(idade, imc,\n         sbp_baseline,\n         sbp_semana12) |&gt;\n  summary()\nMínimo, máximo, mediana, média, quartis, NAs.\n\n\n\n     idade            imc         sbp_baseline    sbp_semana12  \n Min.   :40.00   Min.   :19.80   Min.   :141.0   Min.   :124.8  \n 1st Qu.:46.83   1st Qu.:24.07   1st Qu.:144.1   1st Qu.:133.6  \n Median :54.80   Median :27.95   Median :148.5   Median :138.8  \n Mean   :55.07   Mean   :27.16   Mean   :151.8   Mean   :142.3  \n 3rd Qu.:63.33   3rd Qu.:29.20   3rd Qu.:157.9   3rd Qu.:147.8  \n Max.   :74.20   Max.   :34.60   Max.   :180.0   Max.   :170.0  \n                                                 NA's   :3"
+  },
+  {
+    "objectID": "index.html#verificar-antes-de-analisar",
+    "href": "index.html#verificar-antes-de-analisar",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Verificar antes de analisar",
+    "text": "Verificar antes de analisar\n\nOs tipos de variável estão correctos?\nHá NAs onde não se esperam?\nOs valores estão dentro dos limites plausíveis?"
+  },
+  {
+    "objectID": "index.html#nomes-problemáticos",
+    "href": "index.html#nomes-problemáticos",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Nomes problemáticos",
+    "text": "Nomes problemáticos\n\n\n# tibble: cria uma tabela\ndados_sujos &lt;- tibble(\n  \"ID Paciente\"  = 1:5,\n  \"Grupo (A/B)\"  = c(\"A\",\"B\",\"A\",\"B\",\"A\"),\n  \"SBP Baseline\" = c(155,148,162,151,158)\n)\nnames(dados_sujos)\nEspaços, parênteses, maiúsculas. Difícil de usar no código.\n\n\n\n[1] \"ID Paciente\"  \"Grupo (A/B)\"  \"SBP Baseline\""
+  },
+  {
+    "objectID": "index.html#limpar-com-janitor",
+    "href": "index.html#limpar-com-janitor",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Limpar com janitor",
+    "text": "Limpar com janitor\n\n\n# clean_names: snake_case, sem acentos\ndados_limpos &lt;- dados_sujos |&gt;\n  clean_names()\n\nnames(dados_limpos)\nclean_names() converte para snake_case e remove caracteres especiais.\n\n\n\n[1] \"id_paciente\"  \"grupo_a_b\"    \"sbp_baseline\""
+  },
+  {
+    "objectID": "index.html#filtrar-linhas",
+    "href": "index.html#filtrar-linhas",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Filtrar linhas",
+    "text": "Filtrar linhas\n\n\n# filter: escolhe linhas por condição\ndados |&gt;\n  filter(grupo == \"intervencao\")\nfilter() selecciona linhas que cumprem uma condição.\n\n\n\n# A tibble: 6 × 4\n  patient_id grupo       idade sbp_baseline\n  &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;\n1 HTN001     intervencao  52.2         141 \n2 HTN002     intervencao  59.6         180 \n3 HTN003     intervencao  45.3         154.\n4 HTN004     intervencao  67.9         141 \n5 HTN005     intervencao  50           158.\n6 HTN006     intervencao  40           158"
+  },
+  {
+    "objectID": "index.html#seleccionar-colunas",
+    "href": "index.html#seleccionar-colunas",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Seleccionar colunas",
+    "text": "Seleccionar colunas\n\n\n# select: escolhe colunas pelo nome\ndados |&gt;\n  select(patient_id,\n         sbp_baseline,\n         sbp_semana12)\nselect() escolhe colunas pelo nome.\n\n\n\n# A tibble: 6 × 3\n  patient_id sbp_baseline sbp_semana12\n  &lt;chr&gt;             &lt;dbl&gt;        &lt;dbl&gt;\n1 HTN001             141          131.\n2 HTN002             180          168.\n3 HTN003             154.         140.\n4 HTN004             141          131 \n5 HTN005             158.         150.\n6 HTN006             158          148."
+  },
+  {
+    "objectID": "index.html#criar-variáveis",
+    "href": "index.html#criar-variáveis",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Criar variáveis",
+    "text": "Criar variáveis\n\n\n# mutate: cria ou transforma colunas\ndados &lt;- dados |&gt;\n  mutate(\n    reducao_sbp =\n      sbp_baseline - sbp_semana12\n  )\nmutate() cria ou transforma colunas.\n\n\n\n# A tibble: 6 × 4\n  patient_id sbp_baseline sbp_semana12 reducao_sbp\n  &lt;chr&gt;             &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;\n1 HTN001             141          131.       10.4 \n2 HTN002             180          168.       12.3 \n3 HTN003             154.         140.       14.4 \n4 HTN004             141          131        10   \n5 HTN005             158.         150.        7.20\n6 HTN006             158          148.       10.3"
+  },
+  {
+    "objectID": "index.html#contar-ocorrências",
+    "href": "index.html#contar-ocorrências",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Contar ocorrências",
+    "text": "Contar ocorrências\n\n\n# count: conta combinações\ndados |&gt;\n  count(grupo, sexo)\ncount() conta combinações de valores.\n\n\n\n# A tibble: 4 × 3\n  grupo       sexo      n\n  &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;\n1 controlo    F         6\n2 controlo    M         9\n3 intervencao F         4\n4 intervencao M        11"
+  },
+  {
+    "objectID": "index.html#porquê-uma-tabela-1",
+    "href": "index.html#porquê-uma-tabela-1",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Porquê uma Tabela 1",
+    "text": "Porquê uma Tabela 1\nNum ensaio aleatorizado, a Tabela 1 serve dois propósitos:\n\nDescrever a amostra\nVerificar o balanceamento dos grupos"
+  },
+  {
+    "objectID": "index.html#convenção-de-apresentação",
+    "href": "index.html#convenção-de-apresentação",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Convenção de apresentação",
+    "text": "Convenção de apresentação\nEstatísticas descritivas por grupo, com coluna “Total”.\nVariáveis contínuas: mediana (Q1, Q3) ou média (DP).\nVariáveis categóricas: n (%)."
+  },
+  {
+    "objectID": "index.html#tbl_summary-em-uma-linha",
+    "href": "index.html#tbl_summary-em-uma-linha",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "tbl_summary em uma linha",
+    "text": "tbl_summary em uma linha\n\n\n# tbl_summary: Tabela 1 por grupo\ndados |&gt;\n  select(grupo, idade, sexo,\n         imc, sbp_baseline) |&gt;\n  tbl_summary(by = grupo)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\ncontrolo\nN = 151\nintervencao\nN = 151\n\n\n\n\nidade\n59 (47, 64)\n53 (46, 60)\n\n\nsexo\n\n\n\n\n\n\n    F\n6 (40%)\n4 (27%)\n\n\n    M\n9 (60%)\n11 (73%)\n\n\nimc\n26.8 (23.7, 29.2)\n28.3 (23.7, 30.6)\n\n\nsbp_baseline\n148 (141, 160)\n152 (144, 158)\n\n\n\n1 Median (Q1, Q3); n (%)"
+  },
+  {
+    "objectID": "index.html#o-que-gtsummary-faz",
+    "href": "index.html#o-que-gtsummary-faz",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "O que gtsummary faz",
+    "text": "O que gtsummary faz\n\nDetecta o tipo de cada variável\nEscolhe estatísticas adequadas\nEstratifica por by\nFormata a tabela automaticamente"
+  },
+  {
+    "objectID": "index.html#adicionar-total",
+    "href": "index.html#adicionar-total",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Adicionar total",
+    "text": "Adicionar total\n\n\n# add_overall: coluna \"Total\"\ntabela &lt;- dados |&gt;\n  select(grupo, idade, sexo,\n         imc, sbp_baseline) |&gt;\n  tbl_summary(by = grupo) |&gt;\n  add_overall()\n\ntabela\nColuna “Overall” com o total da amostra.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall\nN = 301\ncontrolo\nN = 151\nintervencao\nN = 151\n\n\n\n\nidade\n55 (47, 64)\n59 (47, 64)\n53 (46, 60)\n\n\nsexo\n\n\n\n\n\n\n\n\n    F\n10 (33%)\n6 (40%)\n4 (27%)\n\n\n    M\n20 (67%)\n9 (60%)\n11 (73%)\n\n\nimc\n28.0 (23.7, 29.2)\n26.8 (23.7, 29.2)\n28.3 (23.7, 30.6)\n\n\nsbp_baseline\n149 (144, 158)\n148 (141, 160)\n152 (144, 158)\n\n\n\n1 Median (Q1, Q3); n (%)"
+  },
+  {
+    "objectID": "index.html#adicionar-p-values",
+    "href": "index.html#adicionar-p-values",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Adicionar p-values",
+    "text": "Adicionar p-values\n\n\n# add_p: adiciona p-values por variável\ndados |&gt;\n  select(grupo, idade, sexo,\n         imc, sbp_baseline) |&gt;\n  tbl_summary(by = grupo) |&gt;\n  add_overall() |&gt;\n  add_p()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall\nN = 301\ncontrolo\nN = 151\nintervencao\nN = 151\np-value2\n\n\n\n\nidade\n55 (47, 64)\n59 (47, 64)\n53 (46, 60)\n0.4\n\n\nsexo\n\n\n\n\n\n\n0.4\n\n\n    F\n10 (33%)\n6 (40%)\n4 (27%)\n\n\n\n\n    M\n20 (67%)\n9 (60%)\n11 (73%)\n\n\n\n\nimc\n28.0 (23.7, 29.2)\n26.8 (23.7, 29.2)\n28.3 (23.7, 30.6)\n0.5\n\n\nsbp_baseline\n149 (144, 158)\n148 (141, 160)\n152 (144, 158)\n0.9\n\n\n\n1 Median (Q1, Q3); n (%)\n\n\n2 Wilcoxon rank sum test; Pearson’s Chi-squared test"
+  },
+  {
+    "objectID": "index.html#nota-sobre-p-values-no-baseline",
+    "href": "index.html#nota-sobre-p-values-no-baseline",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Nota sobre p-values no baseline",
+    "text": "Nota sobre p-values no baseline\nNum RCT bem aleatorizado, diferenças de baseline são fruto do acaso.\nadd_p() é útil como verificação, mas controverso como prova de balanceamento. Usar com critério."
+  },
+  {
+    "objectID": "index.html#formatar-labels",
+    "href": "index.html#formatar-labels",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Formatar labels",
+    "text": "Formatar labels\n\n\n# label: renomeia cada variável\ndados |&gt;\n  select(grupo, idade, sexo,\n         imc, sbp_baseline) |&gt;\n  tbl_summary(\n    by = grupo,\n    label = list(\n      idade        ~ \"Idade (anos)\",\n      sexo         ~ \"Sexo\",\n      imc          ~ \"IMC (kg/m²)\",\n      sbp_baseline ~ \"PAS basal (mmHg)\"\n    )\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\ncontrolo\nN = 151\nintervencao\nN = 151\n\n\n\n\nIdade (anos)\n59 (47, 64)\n53 (46, 60)\n\n\nSexo\n\n\n\n\n\n\n    F\n6 (40%)\n4 (27%)\n\n\n    M\n9 (60%)\n11 (73%)\n\n\nIMC (kg/m²)\n26.8 (23.7, 29.2)\n28.3 (23.7, 30.6)\n\n\nPAS basal (mmHg)\n148 (141, 160)\n152 (144, 158)\n\n\n\n1 Median (Q1, Q3); n (%)"
+  },
+  {
+    "objectID": "index.html#controlar-estatísticas",
+    "href": "index.html#controlar-estatísticas",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Controlar estatísticas",
+    "text": "Controlar estatísticas\n\n\n# statistic: define sumário\n# digits: casas decimais\ndados |&gt;\n  select(grupo, idade, sexo,\n         imc, sbp_baseline) |&gt;\n  tbl_summary(\n    by = grupo,\n    statistic = list(\n      all_continuous()  ~ \"{mean} ({sd})\",\n      all_categorical() ~ \"{n} ({p}%)\"\n    ),\n    digits = all_continuous() ~ 1\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\ncontrolo\nN = 151\nintervencao\nN = 151\n\n\n\n\nidade\n56.3 (10.0)\n53.8 (9.9)\n\n\nsexo\n\n\n\n\n\n\n    F\n6 (40%)\n4 (27%)\n\n\n    M\n9 (60%)\n11 (73%)\n\n\nimc\n26.8 (3.7)\n27.5 (4.2)\n\n\nsbp_baseline\n151.7 (11.3)\n151.9 (10.5)\n\n\n\n1 Mean (SD); n (%)"
+  },
+  {
+    "objectID": "index.html#exportar-para-html",
+    "href": "index.html#exportar-para-html",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Exportar para HTML",
+    "text": "Exportar para HTML\ntabela |&gt;\n  as_gt() |&gt;\n  gt::gtsave(\"outputs/tabelas/tabela_basal.html\")\nPara integrar no Quarto, basta incluir tabela num bloco R. Não é preciso exportar."
+  },
+  {
+    "objectID": "index.html#grammar-of-graphics",
+    "href": "index.html#grammar-of-graphics",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Grammar of graphics",
+    "text": "Grammar of graphics\nUm gráfico é construído por camadas.\n\ndata: o tibble\naes(): mapeamento de variáveis para propriedades visuais\ngeom_: a geometria\ntheme_: o tema visual"
+  },
+  {
+    "objectID": "index.html#boxplot-mínimo",
+    "href": "index.html#boxplot-mínimo",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Boxplot mínimo",
+    "text": "Boxplot mínimo\n\n\n# geom_boxplot: caixa de bigodes\nggplot(dados,\n       aes(x = grupo,\n           y = sbp_semana12)) +\n  geom_boxplot()\nCada + acrescenta uma camada."
+  },
+  {
+    "objectID": "index.html#adicionar-pontos",
+    "href": "index.html#adicionar-pontos",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Adicionar pontos",
+    "text": "Adicionar pontos\n\n\n# geom_jitter: pontos com jitter horizontal\nggplot(dados,\n       aes(x = grupo,\n           y = sbp_semana12)) +\n  geom_boxplot(\n    outlier.shape = NA,\n    width = 0.4\n  ) +\n  geom_jitter(\n    width = 0.12,\n    alpha = 0.7,\n    size = 2.5\n  )\noutlier.shape = NA evita duplicação de pontos."
+  },
+  {
+    "objectID": "index.html#adicionar-cor",
+    "href": "index.html#adicionar-cor",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Adicionar cor",
+    "text": "Adicionar cor\n\n\n# aes(colour = grupo): mapeia cor\nggplot(dados,\n       aes(x = grupo,\n           y = sbp_semana12,\n           colour = grupo)) +\n  geom_boxplot(\n    outlier.shape = NA,\n    width = 0.4\n  ) +\n  geom_jitter(\n    width = 0.12,\n    alpha = 0.7,\n    size = 2.5\n  )"
+  },
+  {
+    "objectID": "index.html#cores-da-identidade-visual",
+    "href": "index.html#cores-da-identidade-visual",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Cores da identidade visual",
+    "text": "Cores da identidade visual\n\n\n# scale_colour_manual: paleta fixa\nggplot(dados,\n       aes(x = grupo,\n           y = sbp_semana12,\n           colour = grupo)) +\n  geom_boxplot(outlier.shape = NA,\n               width = 0.4) +\n  geom_jitter(width = 0.12,\n              alpha = 0.7,\n              size = 2.5) +\n  scale_colour_manual(\n    values = c(\n      \"intervencao\" = \"#2C3E50\",\n      \"controlo\"    = \"#7A9B9E\"\n    )\n  )\nManter paleta consistente em todo o projecto."
+  },
+  {
+    "objectID": "index.html#labels-e-tema",
+    "href": "index.html#labels-e-tema",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Labels e tema",
+    "text": "Labels e tema\n\n\n# labs: títulos e eixos\n# theme_minimal: tema limpo\nggplot(dados,\n       aes(x = grupo,\n           y = sbp_semana12,\n           colour = grupo)) +\n  geom_boxplot(outlier.shape = NA,\n               width = 0.4) +\n  geom_jitter(width = 0.12,\n              alpha = 0.7,\n              size = 2.5) +\n  scale_colour_manual(\n    values = c(\n      \"intervencao\" = \"#2C3E50\",\n      \"controlo\"    = \"#7A9B9E\"\n    )\n  ) +\n  labs(\n    x     = \"Grupo\",\n    y     = \"PAS às 12 semanas (mmHg)\",\n    title = \"HTNCare: outcome primário\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "index.html#guardar-a-figura",
+    "href": "index.html#guardar-a-figura",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Guardar a figura",
+    "text": "Guardar a figura\nggsave(\n  here(\"outputs\", \"figuras\", \"figura_outcome.png\"),\n  width  = 6,\n  height = 4,\n  dpi    = 150\n)\nggsave() grava o último gráfico gerado. No guião, o código final atribui a figura a fig_outcome e passa plot = fig_outcome explicitamente."
+  },
+  {
+    "objectID": "index.html#o-que-é-quarto",
+    "href": "index.html#o-que-é-quarto",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "O que é Quarto",
+    "text": "O que é Quarto\nSistema de publicação científica.\nConverte ficheiros .qmd em HTML, PDF, revealjs, e outros formatos."
+  },
+  {
+    "objectID": "index.html#porquê-um-website",
+    "href": "index.html#porquê-um-website",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Porquê um website",
+    "text": "Porquê um website\nAgrega múltiplas páginas com:\n\nNavegação consistente\nTema partilhado\nUma única configuração"
+  },
+  {
+    "objectID": "index.html#criar-o-projecto",
+    "href": "index.html#criar-o-projecto",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Criar o projecto",
+    "text": "Criar o projecto\nNo Terminal do RStudio:\nquarto create project website ensaio-site"
+  },
+  {
+    "objectID": "index.html#estrutura-gerada",
+    "href": "index.html#estrutura-gerada",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Estrutura gerada",
+    "text": "Estrutura gerada\nensaio-site/\n├── _quarto.yml\n├── index.qmd\n├── about.qmd\n└── styles.css"
+  },
+  {
+    "objectID": "index.html#configuração-mínima",
+    "href": "index.html#configuração-mínima",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Configuração mínima",
+    "text": "Configuração mínima\n\n\n# _quarto.yml: configuração do site\nproject:\n  type: website\n1  output-dir: docs\n\nwebsite:\n  title: \"Ensaio HTNCare\"\n\n1\n\nDirectoria de saída do render. Necessária para GitHub Pages com “Deploy from branch”."
+  },
+  {
+    "objectID": "index.html#navbar",
+    "href": "index.html#navbar",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Navbar",
+    "text": "Navbar\n\n\n# navbar: barra de navegação\nwebsite:\n  navbar:\n    left:\n      - href: index.qmd\n        text: Início\n      - href: protocolo.qmd\n        text: Protocolo\n      - href: materiais.qmd\n        text: Materiais\n      - href: resultados.qmd\n        text: Resultados\n      - href: equipa.qmd\n        text: Equipa"
+  },
+  {
+    "objectID": "index.html#páginas-a-criar",
+    "href": "index.html#páginas-a-criar",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Páginas a criar",
+    "text": "Páginas a criar\n\nindex.qmd: home\nprotocolo.qmd: SPIRIT da E1\nmateriais.qmd: CRF, REDCap, E2\nresultados.qmd: análise dos dados\nequipa.qmd: membros e contactos"
+  },
+  {
+    "objectID": "index.html#página-mínima",
+    "href": "index.html#página-mínima",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Página mínima",
+    "text": "Página mínima\n---\ntitle: \"Protocolo\"\nformat: html\n---\nUma página é um .qmd com YAML e conteúdo Markdown."
+  },
+  {
+    "objectID": "index.html#integrar-uma-tabela",
+    "href": "index.html#integrar-uma-tabela",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Integrar uma tabela",
+    "text": "Integrar uma tabela\n\n\n```{r}\n#| echo: false\n#| message: false\n# bloco silencioso: só carrega\nlibrary(tidyverse)\nlibrary(gtsummary)\nlibrary(here)\n\ndados &lt;- read_csv(\n  here(\"data\", \"raw\", \"htncare.csv\")\n)\n```\necho: false esconde o código. message: false suprime mensagens de carregamento."
+  },
+  {
+    "objectID": "index.html#chamar-gtsummary",
+    "href": "index.html#chamar-gtsummary",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Chamar gtsummary",
+    "text": "Chamar gtsummary\n\n\n```{r}\n#| echo: false\n\n# tbl_summary: Tabela 1\ndados |&gt;\n  select(grupo, idade, sexo,\n         sbp_baseline) |&gt;\n  tbl_summary(by = grupo) |&gt;\n  add_overall()\n```\nA tabela é renderizada no HTML directamente.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall\nN = 301\ncontrolo\nN = 151\nintervencao\nN = 151\n\n\n\n\nidade\n55 (47, 64)\n59 (47, 64)\n53 (46, 60)\n\n\nsexo\n\n\n\n\n\n\n\n\n    F\n10 (33%)\n6 (40%)\n4 (27%)\n\n\n    M\n20 (67%)\n9 (60%)\n11 (73%)\n\n\nsbp_baseline\n149 (144, 158)\n148 (141, 160)\n152 (144, 158)\n\n\n\n1 Median (Q1, Q3); n (%)"
+  },
+  {
+    "objectID": "index.html#incluir-um-gráfico",
+    "href": "index.html#incluir-um-gráfico",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Incluir um gráfico",
+    "text": "Incluir um gráfico\n\n\n```{r}\n#| echo: false\n#| fig-width: 6\n#| fig-height: 4\n\n# ggplot: gráfico do outcome\nggplot(\n  dados |&gt; filter(!is.na(sbp_semana12)),\n  aes(x = grupo, y = sbp_semana12)\n) +\n  geom_boxplot(outlier.shape = NA) +\n  geom_jitter(width = 0.12,\n              alpha = 0.7) +\n  theme_minimal()\n```"
+  },
+  {
+    "objectID": "index.html#preview-em-tempo-real",
+    "href": "index.html#preview-em-tempo-real",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Preview em tempo real",
+    "text": "Preview em tempo real\n\n\n# quarto preview: recarrega ao gravar\nquarto preview\nAbre o browser e actualiza a cada save."
+  },
+  {
+    "objectID": "index.html#build-completo",
+    "href": "index.html#build-completo",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Build completo",
+    "text": "Build completo\n\n\n# quarto render: build estático\nquarto render\nProcessa todos os .qmd e escreve em docs/."
+  },
+  {
+    "objectID": "index.html#passos-de-publicação",
+    "href": "index.html#passos-de-publicação",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Passos de publicação",
+    "text": "Passos de publicação\n\n\n\nCommit de todos os ficheiros\nPush para main\nGitHub &gt; Settings &gt; Pages\nSource: GitHub Actions"
+  },
+  {
+    "objectID": "index.html#url-do-site",
+    "href": "index.html#url-do-site",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "URL do site",
+    "text": "URL do site\nhttps://utilizador.github.io/nome-do-repo\nO workflow corre em cada push para main."
+  },
+  {
+    "objectID": "index.html#estrutura-do-workflow",
+    "href": "index.html#estrutura-do-workflow",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Estrutura do workflow",
+    "text": "Estrutura do workflow\non:\n  push:\n1    branches: main\n\njobs:\n  build-deploy:\n2    runs-on: ubuntu-latest\n    steps:\n3      - uses: actions/checkout@v4\n4      - uses: r-lib/actions/setup-r@v2\n5      - uses: quarto-dev/quarto-actions/setup@v2\n6      - run: quarto render\n7      - uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n\n1\n\nDispara a cada push para main.\n\n2\n\nMáquina virtual Ubuntu fornecida pelo GitHub.\n\n3\n\nClona o repositório.\n\n4\n\nInstala R e pacotes.\n\n5\n\nInstala Quarto.\n\n6\n\nRenderiza o site.\n\n7\n\nPublica o output na branch gh-pages."
+  },
+  {
+    "objectID": "index.html#alternativa-posit-connect-cloud",
+    "href": "index.html#alternativa-posit-connect-cloud",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Alternativa: Posit Connect Cloud",
+    "text": "Alternativa: Posit Connect Cloud\nPosit Connect Cloud publica aplicações Shiny, documentos Quarto, e APIs.\n\nDeploy via drag-and-drop ou GitHub\nPlano gratuito disponível\nÚtil para sites dinâmicos\n\nPara este projecto, GitHub Pages é mais simples."
+  },
+  {
+    "objectID": "index.html#de-abril-sem-aula-presencial",
+    "href": "index.html#de-abril-sem-aula-presencial",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "28 de Abril: sem aula presencial",
+    "text": "28 de Abril: sem aula presencial\nTrabalham autonomamente no site do ensaio."
+  },
+  {
+    "objectID": "index.html#checklist-da-tp10",
+    "href": "index.html#checklist-da-tp10",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Checklist da TP10",
+    "text": "Checklist da TP10\n\nCriar projecto Quarto website\nIntegrar protocolo (E1)\nIntegrar materiais (E2)\nAnalisar o dataset do cenário"
+  },
+  {
+    "objectID": "index.html#checklist-da-tp10-cont.",
+    "href": "index.html#checklist-da-tp10-cont.",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Checklist da TP10 (cont.)",
+    "text": "Checklist da TP10 (cont.)\n\nCriar tabela e gráfico\nIntegrar resultados\nPreencher página equipa\nRever estilo e coesão"
+  },
+  {
+    "objectID": "index.html#checklist-da-tp10-fim",
+    "href": "index.html#checklist-da-tp10-fim",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Checklist da TP10 (fim)",
+    "text": "Checklist da TP10 (fim)\n\nquarto render, commit, push\nVerificar o deploy\nPartilhar link no Moodle"
+  },
+  {
+    "objectID": "index.html#dataset-do-vosso-cenário",
+    "href": "index.html#dataset-do-vosso-cenário",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Dataset do vosso cenário",
+    "text": "Dataset do vosso cenário\nDescarregar de ficheiros/ neste site:\n\nRespiRA: respira.csv\nMindMove: mindmove.csv\nGlucoCheck: glucocheck.csv"
+  },
+  {
+    "objectID": "index.html#referência-obrigatória",
+    "href": "index.html#referência-obrigatória",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Referência obrigatória",
+    "text": "Referência obrigatória\nRStudio: Best Practices for Scientific Work\nCobre projectos, estrutura de pastas, here::here(), estilo de código, reprodutibilidade."
+  },
+  {
+    "objectID": "index.html#próximos-passos",
+    "href": "index.html#próximos-passos",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Próximos passos",
+    "text": "Próximos passos\n\nEsta semana: rever o guião e fazer o exercício\n28 Abril (TP10): trabalho autónomo\n1 Maio: entrega do site no Moodle\n13 Maio (TP11): apresentações finais"
+  },
+  {
+    "objectID": "index.html#contacto",
+    "href": "index.html#contacto",
+    "title": "R/RStudio e Publicação Web com Quarto",
+    "section": "Contacto",
+    "text": "Contacto\nTiago Jacinto\ntiagojacinto@med.up.pt\nDúvidas durante a TP10: Moodle ou email."
+  },
+  {
+    "objectID": "guiao.html",
+    "href": "guiao.html",
+    "title": "Guião · R/RStudio e Publicação Web com Quarto",
+    "section": "",
+    "text": "Este guião complementa os slides da aula. Para os fundamentos de RStudio, ler primeiro RStudio: Best Practices for Scientific Work."
+  },
+  {
+    "objectID": "guiao.html#configurar-o-ambiente",
+    "href": "guiao.html#configurar-o-ambiente",
+    "title": "Guião · R/RStudio e Publicação Web com Quarto",
+    "section": "1. Configurar o ambiente",
+    "text": "1. Configurar o ambiente\nObjectivo: garantir que R, RStudio, Quarto, e os pacotes necessários estão instalados e funcionais.\n\nVerificar versões\nNo console do RStudio:\nR.version$major        # deve ser 4 ou superior\nR.version$minor        # deve ser 4.x\nNo Terminal do RStudio:\nquarto --version       # deve ser 1.5 ou superior\n\n\nInstalar pacotes\nExecutar uma vez no console (não no script):\ninstall.packages(c(\"tidyverse\", \"here\", \"gtsummary\", \"gt\", \"janitor\"))\n\n\nVerificar carregamento\nlibrary(tidyverse)\nlibrary(here)\nlibrary(gtsummary)\nlibrary(gt)\nlibrary(janitor)\nSe não aparecer nenhuma mensagem de erro, o ambiente está pronto.\n\n\nNota pedagógica\ninstall.packages() instala pacotes do CRAN para a biblioteca local do R. Só é necessário correr uma vez por máquina. library() carrega o pacote para a sessão actual e deve aparecer no topo de cada script."
+  },
+  {
+    "objectID": "guiao.html#criar-o-projecto-e-ler-os-dados",
+    "href": "guiao.html#criar-o-projecto-e-ler-os-dados",
+    "title": "Guião · R/RStudio e Publicação Web com Quarto",
+    "section": "2. Criar o projecto e ler os dados",
+    "text": "2. Criar o projecto e ler os dados\nObjectivo: criar um projecto RStudio, organizar a estrutura de pastas, e ler o dataset demo.\n\nCriar o projecto\nNo RStudio: Ficheiro &gt; New Project &gt; New Directory &gt; New Project\nNomear o projecto, por exemplo analise-htncare. Confirmar que “Create a git repository” está activado.\n\n\nEstrutura de pastas\nNo Terminal do RStudio (ou com dir.create() no console):\ndir.create(\"data/raw\",       recursive = TRUE)\ndir.create(\"data/processed\", recursive = TRUE)\ndir.create(\"scripts\")\ndir.create(\"outputs/tabelas\",  recursive = TRUE)\ndir.create(\"outputs/figuras\",  recursive = TRUE)\n\n\nCopiar o dataset\nDescarregar htncare.csv da página Exercício e guardar em data/raw/.\n\n\nCriar o script de análise\nNovo ficheiro: scripts/01_analise.R\n# ---- carregar pacotes ----\nlibrary(tidyverse)\nlibrary(here)\nlibrary(janitor)\nlibrary(gtsummary)\nlibrary(gt)\n\n# ---- ler dados ----\ndados &lt;- read_csv(here(\"data\", \"raw\", \"htncare.csv\"))\n\n\nVerificar a leitura\ndados\nOutput esperado: tibble com 30 linhas e 11 colunas.\n\n\nNota pedagógica\nhere::here() constrói o path a partir da raiz do projecto RStudio. Quando partilhar o projecto com outro utilizador, o código funciona sem alterações porque here() resolve o path relativo correctamente em qualquer máquina."
+  },
+  {
+    "objectID": "guiao.html#explorar-os-dados",
+    "href": "guiao.html#explorar-os-dados",
+    "title": "Guião · R/RStudio e Publicação Web com Quarto",
+    "section": "3. Explorar os dados",
+    "text": "3. Explorar os dados\nObjectivo: compreender a estrutura do dataset antes de qualquer análise.\n\nglimpse e summary\n# ---- explorar estrutura ----\nglimpse(dados)\nsummary(dados)\nglimpse() mostra o tipo e os primeiros valores de cada variável. summary() dá estatísticas descritivas rápidas.\n\n\nVerificar NAs\n# ---- verificar missings ----\ndados |&gt;\n  summarise(across(everything(), ~ sum(is.na(.x))))\nOutput esperado: 3 NAs em sbp_semana12 e dbp_semana12 (10% de 30, os mesmos participantes em ambas as variáveis, simulando dropout às 12 semanas).\n\n\nLimpar nomes com janitor\nSe o dataset tivesse nomes com espaços ou maiúsculas:\n# ---- limpar nomes (exemplo) ----\ndados_limpos &lt;- dados |&gt;\n  clean_names()\nclean_names() converte todos os nomes para snake_case e remove acentos e caracteres especiais.\n\n\nManipulação básica\n# ---- filtrar grupo de intervenção ----\nintervencao &lt;- dados |&gt;\n  filter(grupo == \"intervencao\")\n\n# ---- seleccionar variáveis relevantes ----\ndados_sbp &lt;- dados |&gt;\n  select(patient_id, grupo, sbp_baseline, sbp_semana12)\n\n# ---- criar variável de diferença ----\ndados &lt;- dados |&gt;\n  mutate(reducao_sbp = sbp_baseline - sbp_semana12)\n\n# ---- contar por grupo e sexo ----\ndados |&gt;\n  count(grupo, sexo)\n\n\nNota pedagógica\nExplorar sempre os dados antes de analisar. Um glimpse() e um summary() evitam erros difíceis de detectar a seguir: tipos incorrectos, valores impossíveis, NAs inesperados."
+  },
+  {
+    "objectID": "guiao.html#tabela-de-características-basais",
+    "href": "guiao.html#tabela-de-características-basais",
+    "title": "Guião · R/RStudio e Publicação Web com Quarto",
+    "section": "4. Tabela de características basais",
+    "text": "4. Tabela de características basais\nObjectivo: construir a Tabela 1 com gtsummary.\n\nTabela mínima\n# ---- tabela 1 mínima ----\ntabela_basal &lt;- dados |&gt;\n  select(grupo, idade, sexo, imc, diabetes, sbp_baseline, dbp_baseline, adesao) |&gt;\n  tbl_summary(by = grupo)\n\ntabela_basal\n\n\nAdicionar overall e p-value\n# ---- tabela com total e p-values ----\ntabela_basal &lt;- dados |&gt;\n  select(grupo, idade, sexo, imc, diabetes, sbp_baseline, dbp_baseline, adesao) |&gt;\n  tbl_summary(by = grupo) |&gt;\n  add_overall() |&gt;\n  add_p()\n\ntabela_basal\n\n\nFormatar labels e estatísticas\n# ---- tabela formatada ----\ntabela_basal_fmt &lt;- dados |&gt;\n  select(grupo, idade, sexo, imc, diabetes, sbp_baseline, dbp_baseline, adesao) |&gt;\n  tbl_summary(\n    by = grupo,\n    label = list(\n      idade        ~ \"Idade (anos)\",\n      sexo         ~ \"Sexo\",\n      imc          ~ \"IMC (kg/m²)\",\n      diabetes     ~ \"Diabetes (sim/não)\",\n      sbp_baseline ~ \"PAS basal (mmHg)\",\n      dbp_baseline ~ \"PAD basal (mmHg)\",\n      adesao       ~ \"Adesão ao tratamento\"\n    ),\n    statistic = list(\n      all_continuous()  ~ \"{mean} ({sd})\",\n      all_categorical() ~ \"{n} ({p}%)\"\n    ),\n    digits = all_continuous() ~ 1,\n    missing = \"no\"\n  ) |&gt;\n  add_overall() |&gt;\n  modify_header(label ~ \"**Variável**\")\n\ntabela_basal_fmt\n\n\nExportar para HTML\n# ---- exportar tabela ----\ntabela_basal_fmt |&gt;\n  as_gt() |&gt;\n  gt::gtsave(here(\"outputs\", \"tabelas\", \"tabela_basal.html\"))\n\n\nOutput esperado\nUma tabela com três colunas (Intervenção, Controlo, Total), com médias e desvios-padrão para variáveis contínuas e n (%) para categóricas.\n\n\nNota pedagógica\ntbl_summary() detecta automaticamente se uma variável é contínua ou categórica. Variáveis numéricas com poucos valores únicos podem ser tratadas como categóricas: verificar e usar as.factor() se necessário."
+  },
+  {
+    "objectID": "guiao.html#gráfico-do-outcome-primário",
+    "href": "guiao.html#gráfico-do-outcome-primário",
+    "title": "Guião · R/RStudio e Publicação Web com Quarto",
+    "section": "5. Gráfico do outcome primário",
+    "text": "5. Gráfico do outcome primário\nObjectivo: visualizar a distribuição do outcome primário por grupo com ggplot2.\n\nBoxplot base\n# ---- boxplot base ----\nggplot(dados, aes(x = grupo, y = sbp_semana12)) +\n  geom_boxplot()\n\n\nAdicionar pontos\n# ---- boxplot com pontos ----\nggplot(dados, aes(x = grupo, y = sbp_semana12, colour = grupo)) +\n  geom_boxplot(outlier.shape = NA, width = 0.4) +\n  geom_jitter(width = 0.12, alpha = 0.7, size = 2.5)\noutlier.shape = NA remove os outliers do boxplot para não duplicar os pontos do geom_jitter(). alpha controla a transparência.\n\n\nVersão final com formatação\n# ---- figura final ----\nfig_outcome &lt;- ggplot(\n  dados |&gt; filter(!is.na(sbp_semana12)),\n  aes(x = grupo, y = sbp_semana12, colour = grupo)\n) +\n  geom_boxplot(outlier.shape = NA, width = 0.4, linewidth = 0.7) +\n  geom_jitter(width = 0.12, alpha = 0.7, size = 2.5) +\n  scale_colour_manual(\n    values = c(\"intervencao\" = \"#2C3E50\", \"controlo\" = \"#7A9B9E\")\n  ) +\n  scale_x_discrete(\n    labels = c(\"intervencao\" = \"Intervenção\", \"controlo\" = \"Controlo\")\n  ) +\n  labs(\n    x     = \"Grupo\",\n    y     = \"Pressão sistólica às 12 semanas (mmHg)\",\n    title = \"HTNCare: outcome primário\"\n  ) +\n  theme_minimal(base_size = 13) +\n  theme(legend.position = \"none\")\n\nfig_outcome\n\n\nGuardar\n# ---- guardar figura ----\nggsave(\n  here(\"outputs\", \"figuras\", \"figura_outcome.png\"),\n  plot   = fig_outcome,\n  width  = 6,\n  height = 4,\n  dpi    = 150\n)\n\n\nNota pedagógica\nfilter(!is.na(sbp_semana12)) remove os NAs antes de passar ao ggplot, evitando avisos de linhas removidas. Tratar os NAs explicitamente antes de visualizar é mais claro do que deixar o ggplot ignorá-los silenciosamente."
+  },
+  {
+    "objectID": "guiao.html#projecto-quarto-website",
+    "href": "guiao.html#projecto-quarto-website",
+    "title": "Guião · R/RStudio e Publicação Web com Quarto",
+    "section": "6. Projecto Quarto website",
+    "text": "6. Projecto Quarto website\nObjectivo: criar um website Quarto com múltiplas páginas e publicá-lo no GitHub Pages.\n\nCriar o projecto\nNo Terminal do RStudio:\nquarto create project website ensaio-site\ncd ensaio-site\n\n\nEstrutura gerada\nensaio-site/\n├── _quarto.yml\n├── index.qmd\n├── about.qmd\n└── styles.css\n\n\nConfigurar _quarto.yml\nEditar _quarto.yml:\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"Ensaio [nome do cenário]\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Início\n      - href: protocolo.qmd\n        text: Protocolo\n      - href: materiais.qmd\n        text: Materiais\n      - href: resultados.qmd\n        text: Resultados\n      - href: equipa.qmd\n        text: Equipa\n\n\nCriar as páginas\nCriar protocolo.qmd:\n---\ntitle: \"Protocolo\"\nformat: html\n---\n\n## Resumo do protocolo\n\n[Inserir a SPIRIT table e descrição do protocolo da E1]\nCriar resultados.qmd com análise integrada:\n---\ntitle: \"Resultados\"\nformat: html\n---\n\n## Características basais\n\n```{r}\n#| echo: false\n#| message: false\nlibrary(tidyverse)\nlibrary(gtsummary)\nlibrary(here)\n\ndados &lt;- read_csv(here(\"data\", \"raw\", \"htncare.csv\"))\n\ndados |&gt;\n  select(grupo, idade, sexo, sbp_baseline, dbp_baseline) |&gt;\n  tbl_summary(by = grupo) |&gt;\n  add_overall()\n```\n\n## Outcome primário\n\n```{r}\n#| echo: false\n#| fig-width: 6\n#| fig-height: 4\n\nggplot(dados |&gt; filter(!is.na(sbp_semana12)),\n       aes(x = grupo, y = sbp_semana12, colour = grupo)) +\n  geom_boxplot(outlier.shape = NA, width = 0.4) +\n  geom_jitter(width = 0.12, alpha = 0.7) +\n  scale_colour_manual(\n    values = c(\"intervencao\" = \"#2C3E50\", \"controlo\" = \"#7A9B9E\")\n  ) +\n  labs(x = \"Grupo\", y = \"PAS às 12 semanas (mmHg)\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n```\n\n\nPreview e render\n# ver em tempo real\nquarto preview\n\n# build completo\nquarto render\n\n\nPublicar no GitHub Pages\n\nCriar repositório no GitHub (ex: ensaio-htncare)\nInicializar git no projecto local:\n\ngit init\ngit add .\ngit commit -m \"primeiro commit\"\ngit remote add origin https://github.com/utilizador/ensaio-htncare.git\ngit push -u origin main\n\nCopiar o ficheiro .github/workflows/publish.yml deste site para o repositório do ensaio\nNo GitHub: Settings &gt; Pages &gt; Source &gt; GitHub Actions\nAguardar o workflow correr (separador Actions no GitHub)\n\nO site fica disponível em https://utilizador.github.io/ensaio-htncare.\n\n\nNota pedagógica\noutput-dir: docs em _quarto.yml é necessário para a opção “Deploy from branch”. Com GitHub Actions (como neste projecto), o workflow faz deploy para gh-pages e não é preciso ter docs/ em git. Adicionar docs/ ao .gitignore para não fazer commit do output renderizado."
+  }
+]

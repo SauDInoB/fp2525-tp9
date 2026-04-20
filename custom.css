@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
+
+body {
+  font-family: 'Geist', system-ui, sans-serif;
+}
+
+code, pre, kbd, samp {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+}
+
+:root {
+  --color-deepnavy:  #2C3E50;
+  --color-warmtaupe: #C4A57B;
+  --color-softsage:  #7A9B9E;
+  --color-cream:     #F5F1E8;
+  --color-warmgrey:  #8B7B6B;
+}
+
+.reveal,
+.reveal p,
+.reveal li,
+.reveal td,
+.reveal th,
+.reveal blockquote {
+  font-family: 'Geist', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: 'Geist', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--color-deepnavy);
+}
+
+.reveal code,
+.reveal pre,
+.reveal pre code {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  letter-spacing: 0;
+}
+
+.reveal a {
+  color: var(--color-softsage);
+  text-decoration: underline;
+}
+.reveal a:hover {
+  color: var(--color-warmtaupe);
+}
+
+.reveal blockquote {
+  border-left: 3px solid var(--color-warmtaupe);
+  padding-left: 1em;
+  color: var(--color-warmgrey);
+  font-style: italic;
+  background: none;
+  box-shadow: none;
+}
+
+.reveal .slides section {
+  font-size: 0.72em;
+}
+
+.reveal pre {
+  font-size: 0.68em;
+  line-height: 1.40;
+}
+
+.reveal table {
+  font-size: 0.70em;
+}
+
+.reveal h2 {
+  font-size: 1.45em;
+  margin-bottom: 0.5em;
+}
+
+.reveal h3 {
+  font-size: 1.15em;
+}
+
+.reveal ul,
+.reveal ol {
+  line-height: 1.55;
+}
+
+.reveal .callout {
+  font-size: 0.82em;
+  border-left-color: var(--color-warmtaupe);
+}
+.reveal .callout-tip {
+  border-left-color: var(--color-softsage) !important;
+}
+
+.reveal .slide-number,
+.reveal .slide-number a {
+  text-decoration: none;
+  color: var(--color-warmgrey);
+}
+.reveal .footer {
+  font-size: 0.55em;
+  color: var(--color-warmgrey);
+  letter-spacing: -0.01em;
+}
+
+.reveal .cell-output pre,
+.reveal .cell-output-stdout pre,
+.reveal .cell-output-stderr pre {
+  font-size: 0.55em;
+  line-height: 1.3;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.reveal .cell .gt_table {
+  font-size: 0.55em !important;
+}
+
+.reveal .columns {
+  display: flex;
+  gap: 0.8em;
+  align-items: flex-start;
+}
+
+.reveal .column pre {
+  font-size: 0.62em;
+}
