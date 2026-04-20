@@ -18,7 +18,7 @@ O trabalho é realizado em grupo, em continuidade com as entregas anteriores (E1
 
 Duas entregas: uma formativa a meio, e a apresentação final na TP11.
 
-### Entrega formativa (1 de Maio)
+### Entrega formativa (fim da próxima semana)
 
 Mínimo viável. Site com a estrutura das cinco páginas, integrando o que já foi produzido até à TP8.
 
@@ -32,7 +32,7 @@ Mínimo viável. Site com a estrutura das cinco páginas, integrando o que já f
 3. **Repositório Git** com histórico de commits coerente.
 4. **URL do site publicado** acessível a partir do Moodle.
 
-### Apresentação final (13 de Maio, TP11)
+### Apresentação final (dia da TP11, daqui a três semanas)
 
 O site é a apresentação. Deve conter todo o trabalho da disciplina, personalizado à medida do grupo (podem e devem alterar tema, acrescentar páginas extra, figuras, etc.).
 
@@ -127,8 +127,10 @@ Ambos os links devem estar funcionais no momento da submissão.
 
 ## Prazos
 
-- **1 de Maio de 2026**: entrega formativa (site com estrutura + TP8)
-- **13 de Maio de 2026 (TP11)**: apresentação final (site completo)
+- **Esta semana**: começar o trabalho
+- **Próxima semana (TP10, sem aula presencial)**: desenvolver e submeter a entrega formativa no Moodle até ao fim da semana
+- **Semana seguinte**: receber feedback da formativa
+- **Semana a seguir (TP11)**: apresentação final no dia da aula
 
 ---
 

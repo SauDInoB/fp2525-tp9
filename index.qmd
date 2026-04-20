@@ -39,8 +39,8 @@ dados <- read_csv(here("ficheiros", "htncare.csv"), show_col_types = FALSE)
 | TP1 a TP8 | Concluído |
 | E2 (materiais) | Entregue |
 | TP9 (hoje) | Análise em R + site Quarto |
-| TP10 (28 Abril) | Trabalho autónomo |
-| TP11 + E3 (13 Maio) | Apresentações e entrega final |
+| TP10 (próxima semana) | Trabalho autónomo |
+| TP11 (daqui a 3 semanas) | Apresentação final (o site) |
 
 ## Objectivos desta aula
 
@@ -1276,9 +1276,9 @@ Para este projecto, GitHub Pages é mais simples.
 
 # TP10: trabalho autónomo {background-color="#2C3E50"}
 
-## 28 de Abril: sem aula presencial
+## TP10: sem aula presencial
 
-Trabalham autonomamente no site do ensaio.
+Próxima semana. Trabalham autonomamente no site do ensaio.
 
 ## Checklist da TP10
 
@@ -1330,9 +1330,9 @@ Consultar sempre primeiro antes de perguntar.
 ## Próximos passos
 
 - **Esta semana**: rever o guião e começar o exercício
-- **28 Abril (TP10)**: trabalho autónomo
-- **1 Maio**: entrega formativa no Moodle (estrutura do site + TP8)
-- **13 Maio (TP11)**: apresentação final (site completo com declaração de IA)
+- **Próxima semana (TP10)**: trabalho autónomo, entregar formativa no Moodle até ao fim da semana (estrutura do site + TP8)
+- **Semana seguinte**: feedback à entrega formativa
+- **Semana a seguir (TP11)**: apresentação final (site completo com declaração de IA) no dia da aula
 
 ## Contacto
 

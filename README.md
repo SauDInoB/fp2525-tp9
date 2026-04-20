@@ -26,11 +26,12 @@ O dataset demo usado nos slides e no guião é [HTNCare](https://SauDInoB.github
 
 ## Prazos
 
-| Data | Entrega |
+| Quando | Entrega |
 |---|---|
-| 28 Abr 2026 | TP10: trabalho autónomo (sem aula presencial) |
-| 1 Mai 2026 | Entrega do site no Moodle |
-| 13 Mai 2026 | TP11: apresentações finais (E3) |
+| Esta semana | TP9: aula presencial (arranque do trabalho) |
+| Próxima semana | TP10: trabalho autónomo; entrega formativa no Moodle até ao fim da semana |
+| Semana seguinte | Feedback à entrega formativa |
+| Semana a seguir | TP11: apresentação final (site completo) no dia da aula |
 
 ## Leitura obrigatória
 
