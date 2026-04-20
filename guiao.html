@@ -598,14 +598,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="3" type="1">
 <li>Copiar o ficheiro <code>.github/workflows/publish.yml</code> deste site para o repositório do ensaio</li>
-<li>No GitHub: Settings &gt; Pages &gt; Source &gt; GitHub Actions</li>
-<li>Aguardar o workflow correr (separador Actions no GitHub)</li>
+<li>Aguardar o workflow correr (separador Actions no GitHub); o primeiro run cria a branch <code>gh-pages</code></li>
+<li>No GitHub: Settings &gt; Pages &gt; Source: “Deploy from a branch” · Branch: <code>gh-pages</code> · Folder: <code>/ (root)</code> · Save</li>
+<li>Aguardar o build do Pages terminar (~30 segundos)</li>
 </ol>
 <p>O site fica disponível em <code>https://utilizador.github.io/ensaio-htncare</code>.</p>
 </section>
 <section id="nota-pedagógica-5" class="level3">
 <h3 class="anchored" data-anchor-id="nota-pedagógica-5">Nota pedagógica</h3>
-<p><code>output-dir: docs</code> em <code>_quarto.yml</code> é necessário para a opção “Deploy from branch”. Com GitHub Actions (como neste projecto), o workflow faz deploy para <code>gh-pages</code> e não é preciso ter <code>docs/</code> em git. Adicionar <code>docs/</code> ao <code>.gitignore</code> para não fazer commit do output renderizado.</p>
+<p><code>output-dir: docs</code> em <code>_quarto.yml</code> é necessário para que o build local escreva os ficheiros numa pasta consistente. O workflow usa <code>quarto-actions/publish@v2</code> para empurrar o output para a branch <code>gh-pages</code>; esta é a branch que o GitHub Pages serve. Mantém <code>docs/</code> no <code>.gitignore</code> para não fazer commit do output renderizado.</p>
 
 
 </section>
