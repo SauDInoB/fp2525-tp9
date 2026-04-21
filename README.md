@@ -39,6 +39,6 @@ O dataset demo usado nos slides e no guião é [HTNCare](https://SauDInoB.github
 
 ## Contacto
 
-Tiago Jacinto · [tiagojacinto@med.up.pt](mailto:tiagojacinto@med.up.pt)
+Tiago Jacinto · [tiagojacinto@med.up.pt](mailto:tiagojacinto@med.up.pt) · [tiagojct.eu](https://tiagojct.eu) · ORCID [0000-0002-7897-1101](https://orcid.org/0000-0002-7897-1101)
 
 Dúvidas durante a TP10: Moodle ou email.

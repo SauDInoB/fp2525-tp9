@@ -1,5 +1,11 @@
 ---
 title: "Exercício · Análise dos dados e site Quarto do ensaio"
+author:
+  - name: Tiago Jacinto
+    email: tiagojacinto@med.up.pt
+    url: https://tiagojct.eu
+    orcid: 0000-0002-7897-1101
+    affiliation: Faculty of Medicine of the University of Porto
 format:
   html:
     toc: true
